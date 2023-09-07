@@ -1,0 +1,48 @@
+#oqfala{
+    color: #FFA53D;
+    font-size: 40px;
+    margin-left: 15rem;
+    margin-top: 4rem;
+    font-family:  'Poppins', sans-serif;
+}
+
+#texto1{
+    width: 47rem;
+    font-size: 27px;
+    text-align: left;
+    margin-left: 10rem;
+    color: white;
+    font-family:  'Poppins', sans-serif;
+}
+
+/* #celular{
+    position: absolute;
+    left: 60rem;
+    top: 5rem;
+    width: 40rem;
+} */
+
+
+/* Media Query para telas menores que 768px */
+@media screen and (max-width: 768px) {
+    #oqfala {
+        font-size: 30px; 
+        margin-left: 10px; 
+        margin-top: 20px; 
+    }
+
+    #texto1 {
+        width: 90%; 
+        font-size: 20px;
+        margin-left: 10px; 
+    }
+
+    #celular {
+        position: static; /* Remova a posição absoluta para telas menores */
+        width: 100%; /* a largura ocupa 100% da tela para telas menores */
+    }
+}
+
+
+
+
