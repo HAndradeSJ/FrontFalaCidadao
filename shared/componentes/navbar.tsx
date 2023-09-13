@@ -1,4 +1,13 @@
+'use client'
+import 'node_modules/bootstrap/dist/css/bootstrap.min.css'
+import React, { useEffect } from 'react'
+
 export function Navbar () {
+
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
     return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid">

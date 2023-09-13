@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    background-color: #1934B3;
+}
+
+h1 {
+    color: #FFA53D;
+    font-size: 40px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+    color: #FFA53D;
+    font-size: 20px;
+    margin-left: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    margin: 5rem;
+    margin-top: auto;
+    color: white;
+}
+
+button {
+    margin: 5rem;
+    margin-top: -4rem;
+}
+

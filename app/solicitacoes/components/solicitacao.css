@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background-color: #1934B3;
+}
+
+#solicita {
+    margin-top: -7rem;
+    margin-left: 2rem;
+    width: 60rem;
+}
+
+#h1 {
+    color: #FFA53D;
+    font-size: 40px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#bt1 {
+    margin-top: -80rem;
+    width: 20rem;
+    margin-left: 30rem;
+    font-size: large;
+}
+
+#bt2 {
+    margin-top: -70rem;
+    width: 20rem;
+    margin-left: 30rem;
+    font-size: large;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+    #solicita {
+        margin-top: auto;
+        margin-left: auto;
+        width: 100%;
+        height: 50%;
+    }
+
+    #h1 {
+        font-size: 30px;
+        margin-left: 2rem;
+        margin-top: 1rem;
+    }
+
+    #bt1,
+    #bt2 {
+        margin-top: auto;
+        width: 100%;
+        margin-left: auto;
+    }
+}

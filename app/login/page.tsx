@@ -1,9 +1,11 @@
 'use client'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../login/components/login.css'
 import { Navbar } from '@/shared/componentes/navbar';
 import { useState } from 'react'
 import { criarUsers } from '../api/loginApi';
+import Link from 'next/link';
 
 
 export default function Login() {
@@ -39,6 +41,7 @@ export default function Login() {
 
     return (
         <main>
+            <Navbar/>
             <h1 id='texte'> <b> {Cadastro ? "CADASTRO" : "LOGIN"} </b> </h1>
 
             <div id='div'>
@@ -78,9 +81,19 @@ export default function Login() {
                     </div>
                 </form>
 
+                <Link href="/solicitacoes">
                 <button onClick={() => {enviar()}} type="submit" className="btn btn-success">Login</button>
+                </Link>
 
                 <button onClick={alternaForm} type="submit" className="btn btn-warning"> {Cadastro ? "Mudar para Login" : "Mudar para Cadastro"}</button>
+                
+                    {Cadastro ? 
+                     <Link href="/solicitacoes">
+                        <button onClick={() => {enviar()}} type="submit" className="btn btn-success">Cadastrar</button> 
+                    </Link>
+                        : null
+                    }
+            
             </div>
         </main>
     )

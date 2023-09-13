@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    background-color: #1934B3;
+}
+
 #oqfala{
     color: #FFA53D;
     font-size: 40px;
@@ -15,12 +20,13 @@
     font-family:  'Poppins', sans-serif;
 }
 
-/* #celular{
+#celular{
     position: absolute;
-    left: 60rem;
+    left: 55rem;
     top: 5rem;
     width: 40rem;
-} */
+    height: 40rem;
+}
 
 
 /* Media Query para telas menores que 768px */
