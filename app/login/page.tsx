@@ -81,16 +81,16 @@ export default function Login() {
                     </div>
                 </form>
 
-                <Link href="/solicitacoes">
+                {/* <Link href="/solicitacoes"> */}
                 <button onClick={() => {enviar()}} type="submit" className="btn btn-success">Login</button>
-                </Link>
+                {/* </Link> */}
 
                 <button onClick={alternaForm} type="submit" className="btn btn-warning"> {Cadastro ? "Mudar para Login" : "Mudar para Cadastro"}</button>
                 
                     {Cadastro ? 
-                     <Link href="/solicitacoes">
+                    /* <Link href="/solicitacoes"> */
                         <button onClick={() => {enviar()}} type="submit" className="btn btn-success">Cadastrar</button> 
-                    </Link>
+                    /* </Link> */
                         : null
                     }
             

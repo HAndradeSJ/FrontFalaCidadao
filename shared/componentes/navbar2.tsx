@@ -1,17 +1,17 @@
-/* 'use client' */
+'use client'
 import 'node_modules/bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect } from 'react'
 
 export function Navbar2 () {
 
-/*   useEffect(() => {
+  useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
- */
+
     return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Fala Cidadão</a>
+    <a className="navbar-brand" href="./solicitacoes">Fala Cidadão</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
