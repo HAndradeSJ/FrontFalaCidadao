@@ -66,7 +66,7 @@ export default function solicitacoesForm() {
                 </div>
                 {/* vai ter mesmo ponto de referencia ??  */}
                 <div className="mb-3">
-                    <label className="form-label">Ponto de referência: *</label>
+                    <label className="form-label">Ponto de referência:</label>
                     <input onChange={onchange} type="text" className="form-control" name='referencia'/>
                 </div>
 

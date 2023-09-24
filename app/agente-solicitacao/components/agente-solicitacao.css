@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    background-color: #1934B3;
+}
+
+#h1 {
+    color: #FFA53D;
+    font-size: 40px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#accordion {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    height: 30rem;
+}
+
+#botao {
+    height: 5rem;
+}

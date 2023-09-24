@@ -15,12 +15,23 @@ interface conta {
 }
 
 export const criarUsers = async (users : usuarios) : Promise<any> => {
-    const res = await fetch (`${BACKEND_URL}/auth/sing-up`,{
+    const {cpf, nome, telefone, idade, email, senha} = users
+    const usuarios = {
+        cpf : cpf,
+        nome : nome,
+        telefone : telefone,
+        idade : idade,
+        email : email,
+        senha : senha,
+        funcao : "cidadao",        
+    }
+
+    const res = await fetch (`${BACKEND_URL}/auth/sign-up`,{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(users)
+        body: JSON.stringify(usuarios)
         
     })
     const data = await res.json();
@@ -33,17 +44,24 @@ export const criarUsers = async (users : usuarios) : Promise<any> => {
     return data;
 } */
 
-export const login = async (conta : conta) : Promise<any> => {
+export const login = async (users : usuarios) : Promise<any> => {
+    const {email, senha} = users
+    const usuarios = {
+        email : email,
+        senha : senha,        
+    } 
+
     const res = await fetch (`${BACKEND_URL}/auth/login`,{
-        method: "GET",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(conta)
+        body: JSON.stringify(usuarios)
         
     })
     const data = await res.json();
     localStorage.setItem('token', data.token);
+    return 'Logado com sucesso'
 }
 
 
