@@ -5,8 +5,7 @@ import '../login/components/login.css'
 import { Navbar } from '@/shared/componentes/navbar';
 import { useState } from 'react'
 import { criarUsers, login } from '../api/loginApi';
-import Link from 'next/link';
-
+import Swal from 'sweetalert2';
 
 export default function Login() {
     const objectUSuario = {
@@ -36,7 +35,10 @@ export default function Login() {
             console.log(response);
 
             if (response.status === 'success') {
-                alert('Cadastro feito com sucesso!');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Cadastro feito com sucesso!',
+                  })
             }
             window.location.href = '../solicitacoes';
 
@@ -45,12 +47,20 @@ export default function Login() {
             console.log(response);
 
             if (response.status === 'success') {
-                alert('Login feito com sucesso!');
-            }
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login feito com sucesso!',
+                  })            }
             window.location.href = '../solicitacoes';
         }
         } catch (error) {
             console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: 'Algo deu errado!',
+              })
+              window.location.href = '../not-found';
         }
     }
     

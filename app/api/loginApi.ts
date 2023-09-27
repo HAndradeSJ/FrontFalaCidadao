@@ -1,4 +1,5 @@
 import { BACKEND_URL } from "@/shared/componentes/constants/constants";
+import axios from "axios";
 
 interface usuarios{
     cpf: null,
@@ -26,15 +27,8 @@ export const criarUsers = async (users : usuarios) : Promise<any> => {
         funcao : "cidadao",        
     }
 
-    const res = await fetch (`${BACKEND_URL}/auth/sign-up`,{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuarios)
-        
-    })
-    const data = await res.json();
+    const res = await axios.post(`${BACKEND_URL}/auth/sign-up`,usuarios)
+    const data = res;
     return data;
 }
 
@@ -51,16 +45,9 @@ export const login = async (users : usuarios) : Promise<any> => {
         senha : senha,        
     } 
 
-    const res = await fetch (`${BACKEND_URL}/auth/login`,{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuarios)
-        
-    })
-    const data = await res.json();
-    localStorage.setItem('token', data.token);
+    const res = await axios.post (`${BACKEND_URL}/auth/login`,usuarios)
+    const data = res;
+    localStorage.setItem('token', res.data.token);
     return 'Logado com sucesso'
 }
 

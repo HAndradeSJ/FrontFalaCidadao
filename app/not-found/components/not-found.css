@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    background-color: #1934B3;
+}
+
+h1 {
+    color: #FFA53D;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    margin-left: 32%;
+}
+
+#notfound {
+    width: 45rem;
+    height: 30rem;
+    margin-top: 5rem;
+    margin-left: 25%;
+}
+
+#bt {
+    margin-top: -25rem;
+    width: 32rem;
+    margin-left: 31.5rem;
+    font-size: large;
+    margin-top: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px; 
+        margin-left: 25%;
+    }
+
+    #notfound {
+        width: 80%; 
+        height: auto;
+        margin-top: 2rem; 
+        margin-left: 10%; 
+    }
+
+    #bt {
+        margin-top: -10rem;
+        width: 80%; 
+        margin-left: 10%; 
+        font-size: medium; 
+        margin-top: auto; 
+    }
+}

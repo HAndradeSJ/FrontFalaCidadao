@@ -11,16 +11,15 @@ import { solicitar } from '../api/solicitacoesApi';
 export default function solicitacoesForm() {
     const objectSolicitar  = {
         categoria: '',
-        secretaria: '',
         bairro: '',
         rua: '',
         numero: '',
         referencia: '',
+        descricao: '',
     };
 
     const [solicitacao, setSolicitacao] = useState(objectSolicitar);
     const [categoria, setCategoria] = useState('');
-    const [secretaria, setSecretaria] = useState(''); 
 
     function onchange (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
        const {name,value} = e.target;
@@ -32,7 +31,6 @@ export default function solicitacoesForm() {
             const data = {
                 ...solicitacao,
                 categoria,
-                secretaria,
             };
             const response = await solicitar(data);
             console.log(response);
@@ -51,7 +49,6 @@ export default function solicitacoesForm() {
             <h1>Solicitações</h1>
             <form>
                 <h4>Endereço</h4>
-                {/* deixar assim ou mudar para um menu que tenha todos os bairros ?? */}
                 <div className="mb-3">
                     <label className="form-label">Bairro:</label>
                     <input onChange={onchange} type="text" className="form-control" name='bairro' />
@@ -64,11 +61,15 @@ export default function solicitacoesForm() {
                     <label className="form-label">Número:</label>
                     <input onChange={onchange} type="number" className="form-control" name='numero'/>
                 </div>
-                {/* vai ter mesmo ponto de referencia ??  */}
                 <div className="mb-3">
                     <label className="form-label">Ponto de referência:</label>
                     <input onChange={onchange} type="text" className="form-control" name='referencia'/>
                 </div>
+                <div className="mb-3">
+                    <label className="form-label">Descrição:</label>
+                    <input onChange={onchange} type="text" className="form-control" name='descricao'/>
+                </div>
+
 
                 <h4>Solicitação</h4>
                 <p>Tipo de problema:</p>
@@ -76,18 +77,9 @@ export default function solicitacoesForm() {
                     <option disabled selected  value="">Categoria...</option>
                     <option value="1">Faixas de pedestres</option>
                     <option value="2">Placas de trânsito</option>
-                    <option value="3">Poda ou retirada de árvores</option> {/* deixa assim ou separa em duas categorias */}
+                    <option value="3">Poda ou retirada de árvores</option>
                     <option value="4">Manutenção de ruas, estradas, praças, etc.</option>
                     <option value="5">Iluminação Pública</option>
-                </select>
-
-                {/* ver se vai colocar // são só essas mesmo e colocar sigla */}
-                <br/>
-                <p>Secretaria:</p>
-                <select className="form-select" aria-label="Default select example" onChange={(e) => setSecretaria(e.target.value)} value={secretaria}>
-                    <option disabled selected value="">Secretaria...</option>
-                    <option value="1">Secretaria Municipal de Obras e Vias Públicas</option>
-                    <option value="2">Secretaria Municipal de Serviços Urbanos e Meio Ambiente</option>
                 </select>
                                         
                 <br/>

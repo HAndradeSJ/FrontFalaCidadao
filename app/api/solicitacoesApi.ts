@@ -1,24 +1,29 @@
 import { BACKEND_URL } from "@/shared/componentes/constants/constants";
+import axios from "axios";
 
 interface solicitacao {
     categoria: string;
-    secretaria: string;
     bairro: string;
     rua: string;
     numero: string;
     referencia: string;
+    descricao: string;
 }
 
-export const solicitar = async (solicitar : solicitacao) : Promise<any> => {
-    const res = await fetch (`${BACKEND_URL}/ /* caminho backend */`,{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(solicitar)
-        
-    })
-    const data = await res.json();
+export const solicitar = async (solicitar: solicitacao): Promise<any> => {
+    const { bairro, rua, numero, referencia, descricao, categoria} = solicitar
+    const solicitacao = {
+        categoria: categoria,
+        bairro: bairro,
+        rua: rua,
+        numero: numero,
+        referencia: referencia,
+        descricao: descricao,
+    }
+
+    const res = await axios.post(`${BACKEND_URL}/auth/sign-up`, solicitacao)
+    const data = res;
     return data;
 }
+
 
