@@ -30,39 +30,48 @@ export default function Login() {
     }
     const enviar = async () => {
         try { 
-           if(Cadastro == true) {
+          if (Cadastro == true) {
             const response = await criarUsers(Usuarios);
             console.log(response);
-
+      
             if (response.status === 'success') {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Cadastro feito com sucesso!',
-                  })
+              Swal.fire({
+                icon: 'success',
+                title: 'Cadastro feito com sucesso!',
+              });
+      
+              setTimeout(() => {
+                window.location.href = '../solicitacoes';
+              }, 2000);
             }
-            window.location.href = '../solicitacoes';
-
-        } else {
+          } else {
             const response = await login(Usuarios);
             console.log(response);
-
+      
             if (response.status === 'success') {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Login feito com sucesso!',
-                  })            }
-            window.location.href = '../solicitacoes';
-        }
+              Swal.fire({
+                icon: 'success',
+                title: 'Login feito com sucesso!',
+              });
+              
+              setTimeout(() => {
+                window.location.href = '../solicitacoes';
+              }, 2000);
+            }
+          }
         } catch (error) {
-            console.error(error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Erro',
-                text: 'Algo deu errado!',
-              })
-              window.location.href = '../not-found';
+          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Algo deu errado!',
+          });
+          setTimeout(() => {
+            window.location.href = '../not-found';
+          }, 2000);
         }
-    }
+      }
+      
     
     return (
         <main>
