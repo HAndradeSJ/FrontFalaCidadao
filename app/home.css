@@ -1,16 +1,17 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 h2 {
-    color: #FFA53D;
+    color: #1934B3;
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
     margin-left: 2rem;
 }
 
 .card {
+    /*color:#1934B3;*/
     margin: 0 20px; /* Espaço horizontal*/
   } 
 
