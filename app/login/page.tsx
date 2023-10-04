@@ -86,7 +86,7 @@ export default function Login() {
                         <input onChange={(e) => onchange(e)} name='cpf' type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div> : null
                     }
-
+                    
                     {Cadastro ? <div className="mb-4">
                         <label htmlFor="exampleInputEmail1" className="form-label"> Nome:</label>
                         <input onChange={(e) => onchange(e)} name='nome' type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
