@@ -9,7 +9,7 @@ export function Navbar () {
   }, []);
 
     return (
-<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:"#162E98"}}>
   <div className="container-fluid">
     <a className="navbar-brand" href="./">Fala Cidadão</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

@@ -12,7 +12,7 @@ export function Navbar3 () {
   }, []);
 
     return (
-<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav style={{backgroundColor:"#162E98"}} className="navbar navbar-expand-lg navbar-dark">
   <div className="container-fluid">
     <a className="navbar-brand" href="./home-agente">Fala Cidadão</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@ export function Navbar3 () {
         <a className="nav-link active" aria-current="page" href="./agente-cancelado">Cancelado</a>
       </div>
     </div>
-    <Link href='/perfil'><Image id='perfil' src={perfil} alt='perfil' style={{width:'3rem', height: '3rem'}}/></Link>
+    {/* <Link href='/perfil'><Image id='perfil' src={perfil} alt='perfil' style={{width:'3rem', height: '3rem'}}/></Link> */}
   </div>
 </nav>
     )

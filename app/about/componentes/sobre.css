@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 #oqfala{
@@ -8,7 +8,7 @@ body {
     font-size: 40px;
     margin-left: 15rem;
     margin-top: 4rem;
-    font-family:  'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 #texto1{
@@ -16,8 +16,7 @@ body {
     font-size: 27px;
     text-align: left;
     margin-left: 10rem;
-    color: white;
-    font-family:  'Poppins', sans-serif;
+    color: #1934B3;
 }
 
 #celular{

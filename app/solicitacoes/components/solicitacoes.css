@@ -4,15 +4,24 @@ body {
 }
 
 h3 {
-    color: #1934B3;
-    font-size: 40px;
+    margin-top: 1rem;
+    color:#FFA53D;
+    font-size: 35px;
     margin-left: 2rem;
+    font-weight: bold;
 }
 
 .card {
-    /*color:#1934B3;*/
     margin: 0 20px; /* Espaço horizontal*/
   } 
+
+ #bt1 {
+    width: 15rem;
+    font-size: medium;
+    color: #11226E;
+    font-weight: bold;
+    background-color: #FFA53D;
+}
 
 
 

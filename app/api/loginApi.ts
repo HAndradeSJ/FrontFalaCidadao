@@ -1,4 +1,4 @@
-import { BACKEND_URL } from "@/shared/componentes/constants/constants";
+import { BACKEND_URL_PROD } from "@/shared/componentes/constants/constants";
 import axios from "axios";
 
 interface usuarios{
@@ -27,28 +27,24 @@ export const criarUsers = async (users : usuarios) : Promise<any> => {
         funcao : "cidadao",        
     }
 
-    const res = await axios.post(`${BACKEND_URL}/auth/sign-up`,usuarios)
+    const res = await axios.post(`http://10.10.0.217:3080/auth/sign-up`,usuarios)
     const data = res;
     return data;
 }
 
-/* const criarUsersById = async  (id : any) => {
-    const res = await fetch (`${BACKEND_URL}/alunos/${id}`);
-    const data = await res.json();
-    return data;
-} */
 
-export const login = async (users : usuarios) : Promise<any> => {
+
+export const login = async (users : usuarios) => {
     const {email, senha} = users
+    console.log(email,senha)
     const usuarios = {
         email : email,
         senha : senha,        
     } 
 
-    const res = await axios.post (`${BACKEND_URL}/auth/login`,usuarios)
-    const data = res;
-    localStorage.setItem('token', res.data.token);
-    return 'Logado com sucesso'
+    const res = await axios.post(`http://10.10.0.217:3080/auth/login`,usuarios)
+    localStorage.setItem('token',res.data.response.token);
+    return res
 }
 
 

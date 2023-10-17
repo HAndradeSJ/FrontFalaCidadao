@@ -1,12 +1,13 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 #agente {
-    margin-top: 1rem;
+    margin-top: 4rem;
     margin-left: 2rem;
     width: 55rem;
+    height: 30rem;
 }
 
 #h1 {
@@ -14,10 +15,13 @@ body {
     font-size: 40px;
     margin-left: 5rem;
     margin-top: 2rem;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 #bt1 {
+    font-weight: bold;
+    color: #11226E;
+    background-color: #FFA53D;
     margin-top: -55rem;
     width: 20rem;
     margin-left: 30rem;
@@ -25,6 +29,9 @@ body {
 }
 
 #bt2 {
+    font-weight: bold;
+    color: #11226E;
+    background-color: #FFA53D;
     margin-top: -45rem;
     width: 20rem;
     margin-left: 30rem;
@@ -32,6 +39,9 @@ body {
 }
 
 #bt3 {
+    font-weight: bold;
+    color: #11226E;
+    background-color: #FFA53D;
     margin-top: -35rem;
     width: 20rem;
     margin-left: 30rem;
@@ -39,6 +49,9 @@ body {
 }
 
 #bt4 {
+    font-weight: bold;
+    color: #11226E;
+    background-color: #FFA53D;
     margin-top: -25rem;
     width: 20rem;
     margin-left: 30rem;

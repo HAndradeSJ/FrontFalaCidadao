@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 h1 {
@@ -8,20 +8,21 @@ h1 {
     font-size: 40px;
     margin-left: 5rem;
     margin-top: 2rem;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 h4 {
-    color: #FFA53D;
+    color: #162E98;
     font-size: 20px;
     margin-left: 2rem;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
 }
 
 form {
+    font-weight: bold;
     margin: 5rem;
     margin-top: auto;
-    color: white;
+    color: #162E98;
 }
 
 button {
