@@ -1,33 +1,74 @@
-'use client'
-import 'bootstrap/dist/css/bootstrap.min.css';
-/* import '../solicitacoes/components/solicitacao.css';*/
-/* import 'app/globals.css' */
-import '../solicitacoes/components/solicitacao.css';
-import { Navbar2 } from '@/shared/componentes/navbar2';
-import Image from 'next/image';
-import Usuario from 'images/usuario.png'
+import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
+import React from 'react'
+import 'app/solicitacoes/components/solicitacoes.css'
+import Image from 'next/image'
+import faixa from '/images/faixa.png'
+import placa from '/images/placas.jpg'
+import arvore from '/images/arvores.jpg'
+import ruas from '/images/ruas.jpg'
+import iluminacao from '/images/iluminacao.jpg'
+import { Navbar2 } from '@/shared/componentes/navbar2'
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 
-export default function solicitacoes() {
-    useEffect(() => {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
-    return (
+export default function solicitacoes () {
+  return (
     <>
-      <Navbar2 />
-      <h1 id='h1'>Como podemos ajudar?</h1>
-      <Image src={Usuario} alt='usuario' id='solicita' />
+    <Navbar2/>
+        <h3> <b> Solicitações - Categorias</b> </h3>
+        <div className="container justify-content-center  align-items-center">
+          <div className='row'>
 
-      <div className="d-grid gap-2 col-3 mx-auto">
-       <Link href='/solicitacoes-form'>
-        <button id='bt1' className="btn btn-warning" type="button" btn-lg>Solicitações</button>
-        </Link>
-        <Link href='/consultas'>
-        <button id='bt2' className="btn btn-warning" type="button" btn-lg>Consultas</button>
-       </Link>
-      </div>
-    </>
-  )
-}
+          <div className="card" style={{ width: "20rem", height: "20rem" }}>
+              <Image src={faixa} alt='documentos' className="card-img-top" />
+              <div className="card-body">
+                <h6 className="card-title text-body font-weight-bold">Faixa de pedestre</h6>
+                <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="card" style={{ width: "20rem", height: "20rem" }}>
+              <Image src={placa} alt='documentos' className="card-img-top" />
+              <div className="card-body">
+                <h6 className="card-title text-body font-weight-bold">Placas de trânsito</h6>
+                <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="card" style={{ width: "20rem", height: "20rem" }}>
+              <Image src={arvore} alt='documentos' className="card-img-top" />
+              <div className="card-body">
+                <h6 className="card-title text-body font-weight-bold">Poda ou retirada de árvores</h6>
+                <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+                </Link>
+              </div>
+            </div>  
+
+            <div className="card" style={{ width: "20rem", height: "20rem" }}>
+              <Image src={ruas} alt='documentos' className="card-img-top" />
+              <div className="card-body">
+                <h6 className="card-title text-body font-weight-bold">Manutenção de ruas, estradas, praças, etc.</h6>
+                <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="card" style={{ width: "20rem", height: "20rem" }}>
+              <Image src={iluminacao} alt='documentos' className="card-img-top" />
+              <div className="card-body">
+                <h6 className="card-title text-body font-weight-bold">Iluminação pública</h6>
+                <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        </>
+)};

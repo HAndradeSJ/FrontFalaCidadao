@@ -22,16 +22,16 @@ export default function homeAgente() {
 
       <div className="d-grid gap-2 col-3 mx-auto">
        <Link href='/agente-solicitacao'>
-        <button id='bt1' className="btn btn-warning" type="button" btn-lg>Solicitações</button>
+        <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
         </Link>
         <Link href='/agente-andamento'>
-        <button id='bt2' className="btn btn-warning" type="button" btn-lg>Em andamento</button>
+        <button id='bt2' className="btn btn" type="button" btn-lg>Em andamento</button>
        </Link>
        <Link href='/agente-concluido'>
-        <button id='bt3' className="btn btn-warning" type="button" btn-lg>Concluído</button>
+        <button id='bt3' className="btn btn" type="button" btn-lg>Concluído</button>
        </Link>
        <Link href='/agente-cancelado'>
-        <button id='bt4' className="btn btn-warning" type="button" btn-lg>Cancelado</button>
+        <button id='bt4' className="btn btn" type="button" btn-lg>Cancelado</button>
        </Link>
       </div>
     </>

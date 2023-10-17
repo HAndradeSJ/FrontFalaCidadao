@@ -46,7 +46,7 @@ export default function solicitacoesForm() {
     return (
         <>
             <Navbar2 />
-            <h1>Solicitações</h1>
+            <h1>Formulário de solicitações</h1>
             <form>
                 <h4>Endereço</h4>
                 <div className="mb-3">
@@ -71,7 +71,7 @@ export default function solicitacoesForm() {
                 </div>
 
 
-                <h4>Solicitação</h4>
+               {/*  <h4>Solicitação</h4>
                 <p>Tipo de problema:</p>
                 <select className="form-select" aria-label="Default select example"  onChange={(e) => setCategoria(e.target.value)} value={categoria}>
                     <option disabled selected  value="">Categoria...</option>
@@ -80,9 +80,8 @@ export default function solicitacoesForm() {
                     <option value="3">Poda ou retirada de árvores</option>
                     <option value="4">Manutenção de ruas, estradas, praças, etc.</option>
                     <option value="5">Iluminação Pública</option>
-                </select>
+                </select> */}
                                         
-                <br/>
                 <h4>Fotos</h4>
                 <div>
                     <label htmlFor="formFileLg" className="form-label">Adicione aqui fotos que você tirou do problema que deseja fazer uma solicitação</label>

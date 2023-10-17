@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 #solicita {
@@ -14,7 +14,7 @@ body {
     font-size: 40px;
     margin-left: 5rem;
     margin-top: 2rem;
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 #bt1 {
@@ -22,6 +22,9 @@ body {
     width: 20rem;
     margin-left: 30rem;
     font-size: large;
+    color: #11226E;
+    font-weight: bold;
+    background-color: #FFA53D;
 }
 
 #bt2 {
@@ -29,6 +32,9 @@ body {
     width: 20rem;
     margin-left: 30rem;
     font-size: large;
+    color: #11226E;
+    font-weight: bold;
+    background-color: #FFA53D;
 }
 
 /* Media query para telas menores */

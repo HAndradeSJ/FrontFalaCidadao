@@ -5,7 +5,7 @@ import CarouselComponent from '../shared/componentes/carrossel'
 
 import { Carousel } from 'react-bootstrap'
 import 'app/globals.css'
-import 'app/home.css'
+import './home.css'
 import Doc from 'images/doc.jpg'
 import Tempo from 'images/tempo.jpg'
 import Veracidade from 'images/veracidade.jpg'
@@ -26,7 +26,7 @@ export default function home () {
         <CarouselComponent />
 
         <br />
-        <h2>Vantagens do Fala Cidadão</h2>
+        <h3> <b>Vantagens do Fala Cidadão </b> </h3>
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 

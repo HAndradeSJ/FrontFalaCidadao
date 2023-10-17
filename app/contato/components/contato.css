@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #1934B3;
+    background-color: #ffffff;
 }
 
 #titulo {
@@ -8,16 +8,15 @@ body {
     font-size: 40px;
     margin-left: 15rem;
     margin-top: 4rem;
-    font-family:  'Poppins', sans-serif;
     text-align: center;
+    font-weight: bold;
 }
 
 #texto {
     font-size: 25px;
     text-align: justify;
     margin-left: 10rem;
-    color: white;
-    font-family:  'Poppins', sans-serif;
+    color: #162E98;
     text-align: center;
 }
 
@@ -32,8 +31,7 @@ body {
     margin-left: 60rem;
     margin-top: -12rem;
     margin-top: rem;
-    color: white;
-    font-family:  'Poppins', sans-serif; 
+    color: #162E98;
 }
 
 @media (max-width: 768px) {

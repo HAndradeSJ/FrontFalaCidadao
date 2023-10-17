@@ -1,0 +1,24 @@
+body {
+    background-image: url("../img/indaia.jpg");
+}
+
+#texto {
+    margin-left: 40%;
+    margin-top: 3%;
+    position: absolute;
+    color: #1934B3;
+    font-size: 25px;
+}
+
+#div {
+    padding: 3rem 3rem 3rem 3rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    z-index: -1;
+    margin-left: 40%;
+    margin-top: 5%;
+    position: absolute;
+    color: #162E98;
+    font-size: 15px;
+    font-weight: bold;
+}
