@@ -4,7 +4,8 @@ import 'app/agente-andamento/components/agente-andamento.css'
 import { useEffect } from 'react';
 import { Navbar3 } from '@/shared/componentes/navbar3';
 import { FaPaperclip } from 'react-icons/fa';
-
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function agenteAndamento() {
 
@@ -12,82 +13,53 @@ export default function agenteAndamento() {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const openModal = () => {
+    setIsModalOpen(true);
+    Swal.fire('Descrição do usuário: Endereço: Status do técnico: Nome do técnico: Imagem do técnico:')
+  };
+  
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
   return (
     <>
       <Navbar3 />
       <h1 id='h1'>Em Andamento</h1>
 
-      <div className="accordion" id="accordion">
-        <div className="accordion-item" id='solicitacao'>
-          <h2 className="accordion-header">
-            <button id="botao" className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <b>
-                Protocolo: X &nbsp;
-                Data aberto: dd/mm/aaaa &nbsp;
-                Data conclusão: dd/mm/aaaa &nbsp;
-                Status: Em andamento &nbsp; &nbsp;
-                <FaPaperclip /> Imagem
-              </b>
-            </button>
-          </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              Descrição do usuário: <br />
-              Endereço: <br />
-              Status do técnico: <br />
-              Nome do técnico: <br/>
-              <FaPaperclip /> Imagem do técnico
+    <div>
+    <table id='table'>
+      <thead>
+        <tr>
+          <td>Protocolo:</td>
+          <td>Abertura:</td>
+          <td>Conclusão:</td>
+          <td>Status:</td>
+          <td>Imagem:</td>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>1</td>
+          <td>dd/mm/aaaa</td>
+          <td>dd/mm/aaaa</td>
+          <td>Andamento</td>
+          <td>Img.png</td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <button onClick={openModal} className="btn btn" id='botao'>Ver Mais</button>
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={closeModal}>&times;</span>
             </div>
           </div>
-            
-            
-
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button id="botao" className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <b>
-                  Protocolo &nbsp;
-                  Data aberto &nbsp;
-                  Data conclusão &nbsp;
-                  Status &nbsp; &nbsp;
-                  <FaPaperclip /> Imagem
-                </b>
-              </button>
-            </h2>
-            <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                Descrição do usuário: <br />
-                Endereço: <br />
-                Status do técnico: <br />
-                Nome do técnico: <br/>
-                <FaPaperclip /> Imagem do técnico
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingThree">
-              <button id="botao" className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <b> 
-                  Protocolo &nbsp;
-                  Data aberto &nbsp;
-                  Data conclusão &nbsp;
-                  Status &nbsp; &nbsp;
-                  <FaPaperclip /> Imagem
-                </b>
-              </button>
-            </h2>
-            <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                Descrição do usuário: <br />
-                Endereço: <br />
-                Status do técnico: <br />
-                Nome do técnico: <br/>
-                <FaPaperclip /> Imagem do técnico
-              </div>
-            </div>
-          </div>
-        </div>
+      )}
       </div>
     </>
   )

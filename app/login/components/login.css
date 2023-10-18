@@ -11,7 +11,7 @@ body {
 }
 
 #div {
-    padding: 3rem 3rem 3rem 3rem;
+    padding: 3rem 3rem 1rem 3rem;
     border-radius: 1rem;
     background-color: #ffffff;
     z-index: -1;
@@ -24,6 +24,7 @@ body {
 }
 
 #senha {
+    margin-top: 10%;
     margin-left: 20% ;
 }
 
@@ -37,7 +38,7 @@ body {
     }
     
     #senha {
-      margin-left: 5rem;
+      margin-left: 4rem;
     }
 
     #div {

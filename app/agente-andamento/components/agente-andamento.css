@@ -11,13 +11,36 @@ body {
     font-weight: bold;
 }
 
-#accordion {
+#table {
     margin-top: 3rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    height: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65rem;
+    border: solid 1px;
+    text-align: center;
+    
 }
 
 #botao {
-    height: 5rem;
+    margin-left: 5rem;
+    background-color: #FFA53D;
+    color:#11226E;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    #h1 {
+        font-size: 30px; 
+        margin-left: 2rem; 
+    }
+
+    #table {
+        width: 100%;
+    }
+
+    #botao {
+        margin-left: 2rem; 
+        margin-top: 1rem;
+    }
 }
