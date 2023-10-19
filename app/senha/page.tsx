@@ -7,18 +7,15 @@ import 'app/senha/components/senha.css'
 
 export default function EsqueceuSenha() {
     return (
-      <main>
+      <>
         <Navbar />
+        
+        <div>
         <h1 id='texto'> <b> Esqueceu a senha?</b> </h1>
-
-        <div id='div'>
-        <form>
-            <label>Email:</label>
-            <input name='email' type="text" className="form-control" id="exampl==InputEmail1" aria-describedby="emailHelp"></input>
-        </form>
         </div>
 
-
-
-        </main>
+        <div id='div'>
+          <h4> Sua nova senha será: </h4>
+        </div>
+        </>
     )};
