@@ -7,6 +7,7 @@ import 'app/senha/components/senha.css'
 
 export default function EsqueceuSenha() {
     return (
+<<<<<<< HEAD
       <main>
         <Navbar />
         <h1 id='texto'> <b> Esqueceu a senha?</b> </h1>
@@ -21,4 +22,17 @@ export default function EsqueceuSenha() {
 
 
         </main>
+=======
+      <>
+        <Navbar />
+        
+        <div>
+        <h1 id='texto'> <b> Esqueceu a senha?</b> </h1>
+        </div>
+
+        <div id='div'>
+          <h4> Sua nova senha será: </h4>
+        </div>
+        </>
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
     )};

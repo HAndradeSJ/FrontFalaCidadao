@@ -4,19 +4,34 @@ import 'app/agente-solicitacao/components/agente-solicitacao.css'
 import { useEffect } from 'react';
 import { Navbar3 } from '@/shared/componentes/navbar3';
 import { FaPaperclip } from 'react-icons/fa';
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 
 export default function solicitacaoAgente() {
-
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const openModal = () => {
+    setIsModalOpen(true);
+    Swal.fire('Descrição do usuário: Endereço: Status do técnico: Nome do técnico: Imagem do técnico:')
+  };
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+  
   return (
     <>
       <Navbar3 />
       <h1 id='h1'>Solicitações</h1>
 
+<<<<<<< HEAD
 
     
 
@@ -42,58 +57,72 @@ export default function solicitacaoAgente() {
               Status do técnico: <br />
               Nome do técnico: <br/>
               <FaPaperclip /> Imagem do técnico
+=======
+    <div>
+    <table id='table'>
+      <thead>
+        <tr>
+          <td>Protocolo:</td>
+          <td>Abertura:</td>
+          <td>Conclusão:</td>
+          <td>Status:</td>
+          <td>Imagem:</td>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>1</td>
+          <td>dd/mm/aaaa</td>
+          <td>dd/mm/aaaa</td>
+          <td>Solicitação</td>
+          <td>Img.png</td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <button onClick={openModal} className="btn btn" id='botao'>Ver Mais</button>
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={closeModal}>&times;</span>
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
             </div>
           </div>
-            
-            
-
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button id="botao" className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <b>
-                  Protocolo &nbsp;
-                  Data aberto &nbsp;
-                  Data conclusão &nbsp;
-                  Status &nbsp; &nbsp;
-                  <FaPaperclip /> Imagem
-                </b>
-              </button>
-            </h2>
-            <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                Descrição do usuário: <br />
-                Endereço: <br />
-                Status do técnico: <br />
-                Nome do técnico: <br/>
-                <FaPaperclip /> Imagem do técnico
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingThree">
-              <button id="botao" className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <b> 
-                  Protocolo &nbsp;
-                  Data aberto &nbsp;
-                  Data conclusão &nbsp;
-                  Status &nbsp; &nbsp;
-                  <FaPaperclip /> Imagem
-                </b>
-              </button>
-            </h2>
-            <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                Descrição do usuário: <br />
-                Endereço: <br />
-                Status do técnico: <br />
-                Nome do técnico: <br/>
-                <FaPaperclip /> Imagem do técnico
-              </div>
-            </div>
-          </div>
-        </div>
+      )}
       </div>
+
+      <div>
+    <table id='table'>
+      <thead>
+        <tr>
+          <td>Protocolo:</td>
+          <td>Abertura:</td>
+          <td>Conclusão:</td>
+          <td>Status:</td>
+          <td>Imagem:</td>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>2</td>
+          <td>dd/mm/aaaa</td>
+          <td>dd/mm/aaaa</td>
+          <td>Solicitação</td>
+          <td>Img.png</td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <button onClick={openModal} className="btn btn" id='botao'>Ver Mais</button>
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={closeModal}>&times;</span>
+            </div>
+          </div>
+      )}
+      </div>
+
     </>
   )
 }

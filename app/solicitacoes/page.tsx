@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
 import React, { useEffect, useState } from 'react'
+=======
+import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
+import React from 'react'
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
 import 'app/solicitacoes/components/solicitacoes.css'
 import Image from 'next/image'
 import faixa from '/images/faixa.png'
@@ -11,6 +16,7 @@ import ruas from '/images/ruas.jpg'
 import iluminacao from '/images/iluminacao.jpg'
 import { Navbar2 } from '@/shared/componentes/navbar2'
 import Link from 'next/link';
+<<<<<<< HEAD
 import { getCategoria } from '../api/categoria'
 import { Categoria } from '@/shared/types/types'
 
@@ -31,6 +37,15 @@ export default function solicitacoes () {
     <>
     <Navbar2/>
         <h3><b> Solicitações - Categorias</b> </h3>
+=======
+
+
+export default function solicitacoes () {
+  return (
+    <>
+    <Navbar2/>
+        <h3> <b> Solicitações - Categorias</b> </h3>
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 
@@ -39,10 +54,14 @@ export default function solicitacoes () {
               <div className="card-body">
                 <h6 className="card-title text-body font-weight-bold">Faixa de pedestre</h6>
                 <Link href='/solicitacoes-form'>
+<<<<<<< HEAD
                 <button id='bt1' className="btn btn" type="button" btn-lg onClick={()=>{
                     console.log(categoria)
                     localStorage.setItem('categoria',categoria[0].idcategoira)
                 }}>Solicitações</button>
+=======
+                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
                 </Link>
               </div>
             </div>
