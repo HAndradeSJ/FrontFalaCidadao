@@ -10,7 +10,6 @@ import iluminacao from '/images/iluminacao.jpg'
 import { Navbar2 } from '@/shared/componentes/navbar2'
 import Link from 'next/link';
 
-
 export default function solicitacoes () {
   return (
     <>
