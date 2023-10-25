@@ -21,6 +21,7 @@ export default function solicitacoes () {
     async function getall(){
      const response = await getCategoria()
       setCategoria(response);
+  
     }
     getall()
       
@@ -30,23 +31,18 @@ export default function solicitacoes () {
   return (
     <>
     <Navbar2/>
-        <h3 id='h3'> Solicitações - Categorias </h3>
-
+        <h3><b> Solicitações - Categorias</b> </h3>
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 
-          <div className="card" style={{ width: "20rem", height: "20rem" }}>
+          <div className="card" style={{ width: "20rem", height: "20rem" }} key={"1"}> 
               <Image src={faixa} alt='documentos' className="card-img-top" />
               <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">Faixa de pedestre</h6>
-                <Link href='/solicitacoes-form'>
+                <h6 className="card-title text-body font-weight-bold">{categoria[0]?.categoria}</h6>
+                <Link href={`/solicitacoes-form`}>
                 <button id='bt1' className="btn btn" type="button" btn-lg onClick={()=>{
-                    console.log(categoria)
-                    localStorage.setItem('categoria',categoria[0].idcategoira)
+                    localStorage.setItem('idcategoria',(categoria[0]?.idcategoira));
                 }}>Solicitações</button>
-
-                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
-
                 </Link>
               </div>
             </div>
