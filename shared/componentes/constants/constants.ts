@@ -1,1 +1,2 @@
-export const BACKEND_URL="http://10.10.0.241:3080"
+export const BACKEND_URL_PROD=""
+export const  BACKEND_URL_lOCAL="http://10.10.0.271:3080"

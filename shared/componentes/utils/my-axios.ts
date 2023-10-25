@@ -1,10 +1,10 @@
-/* import axios from 'axios'
-import { BACKEND_URL } from '../constants/constants';
+ import axios from 'axios'
+import { BACKEND_URL_PROD,BACKEND_URL_lOCAL } from '../constants/constants';
 
-const API_URL = BACKEND_URL;
+
 
 const api = axios.create ({
-    baseURL: API_URL
+    baseURL:"http://10.10.0.217:3080"
 })
 
 axios.interceptors.request.use(
@@ -20,4 +20,4 @@ axios.interceptors.request.use(
   }
 );
 
-export default api; */
+export default api;

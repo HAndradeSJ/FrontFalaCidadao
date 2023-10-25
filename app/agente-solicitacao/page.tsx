@@ -31,6 +31,33 @@ export default function solicitacaoAgente() {
       <Navbar3 />
       <h1 id='h1'>Solicitações</h1>
 
+<<<<<<< HEAD
+
+    
+
+
+
+      <div className="accordion" id="accordion">
+        <div className="accordion-item" id='solicitacao'>
+          <h2 className="accordion-header">
+            <button id="botao" className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <b>
+                Protocolo: X &nbsp;
+                Data aberto: dd/mm/aaaa &nbsp;
+                Data conclusão: dd/mm/aaaa &nbsp;
+                Status: ... &nbsp; &nbsp;
+                <FaPaperclip /> Imagem
+              </b>
+            </button>
+          </h2>
+          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div className="accordion-body">
+              Descrição do usuário: <br />
+              Endereço: <br />
+              Status do técnico: <br />
+              Nome do técnico: <br/>
+              <FaPaperclip /> Imagem do técnico
+=======
     <div>
     <table id='table'>
       <thead>
@@ -58,6 +85,7 @@ export default function solicitacaoAgente() {
           <div className="modal">
             <div className="modal-content">
               <span className="close" onClick={closeModal}>&times;</span>
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
             </div>
           </div>
       )}

@@ -1,4 +1,4 @@
-import { BACKEND_URL } from "@/shared/componentes/constants/constants";
+import { BACKEND_URL_PROD } from "@/shared/componentes/constants/constants";
 import axios from "axios";
 
 interface solicitacao {
@@ -21,7 +21,7 @@ export const solicitar = async (solicitar: solicitacao): Promise<any> => {
         descricao: descricao,
     }
 
-    const res = await axios.post(`${BACKEND_URL}/auth/sign-up`, solicitacao)
+    const res = await axios.post(`${BACKEND_URL_PROD}/auth/sign-up`, solicitacao)
     const data = res;
     return data;
 }

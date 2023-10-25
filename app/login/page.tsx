@@ -8,6 +8,10 @@ import { criarUsers, login } from '../api/loginApi';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
+<<<<<<< HEAD
+import { useRouter } from 'next/navigation';
+=======
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
 
 export default function Login() {
   const objectUSuario = {
@@ -18,6 +22,81 @@ export default function Login() {
     email: null,
     senha: null,
   };
+<<<<<<< HEAD
+  const Router = useRouter();
+  const [Cadastro, setCadastro] = useState(false);
+  const [Usuarios, setUSuario] = useState(objectUSuario);
+  function onchange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+    setUSuario({ ...Usuarios, [name]: value });
+  }
+  const alternaForm = () => {
+    const anterior = Cadastro;
+    setCadastro(!anterior);
+
+  }
+  const enviar = async () => {
+    try {
+      if (Cadastro == true) {
+        const response = await criarUsers(Usuarios);
+        console.log(response);
+
+        if (response.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Cadastro feito com sucesso!',
+          });
+          const res = await login(Usuarios);
+          if (res.status === 200) {
+           
+            if(res.data.response.funcao === "cidadao"){
+           
+              Router.push('/home-usuario');
+  
+            }else{
+              Router.push('/home-agente');
+            }
+          }
+          else{
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Cadastro feito com sucesso!',
+                });
+          }  
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Cadastro feito com sucesso!',
+          });
+        }
+      } else {
+
+        const response = await login(Usuarios);
+        console.log('oi',response);
+     
+        if (response.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Login feito com sucesso !',
+          });
+          if(response.data.response.funcao === "cidadao"){
+         
+            Router.push('/home-usuario');
+
+          }else{
+            Router.push('/home-agente');
+          }
+        }
+        else{
+              Swal.fire({
+                icon: 'error',
+                title: 'Cadastro feito com sucesso!',
+              });
+        }
+
+      
+=======
 
   const [Cadastro, setCadastro] = useState(false);
   const [Usuarios, setUSuario] = useState(objectUSuario);
@@ -60,6 +139,7 @@ export default function Login() {
             window.location.href = '../home-usuario';
           }, 2000);
         }
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
       }
     } catch (error) {
       console.error(error);
@@ -68,9 +148,13 @@ export default function Login() {
         title: 'Erro',
         text: 'Algo deu errado!',
       });
+<<<<<<< HEAD
+      
+=======
       setTimeout(() => {
         window.location.href = '../not-found';
       }, 2000);
+>>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
     }
   }
 

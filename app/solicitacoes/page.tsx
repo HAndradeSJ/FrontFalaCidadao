@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+'use client'
 import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'app/solicitacoes/components/solicitacoes.css'
 import Image from 'next/image'
 import faixa from '/images/faixa.png'
@@ -9,12 +11,30 @@ import ruas from '/images/ruas.jpg'
 import iluminacao from '/images/iluminacao.jpg'
 import { Navbar2 } from '@/shared/componentes/navbar2'
 import Link from 'next/link';
+import { getCategoria } from '../api/categoria'
+import { Categoria } from '@/shared/types/types'
+
 
 export default function solicitacoes () {
+  const [categoria,setCategoria] = useState<Categoria[]>([]as Categoria[])
+ useEffect(() => {
+    async function getall(){
+     const response = await getCategoria()
+      setCategoria(response);
+    }
+    getall()
+      
+ }, []);
+
+
   return (
     <>
     <Navbar2/>
-        <h3 id='h3'> Solicitações - Categorias </h3>
+        <h3><b> Solicitações - Categorias</b> </h3>
+
+
+ <Navbar2/>
+        <h3> <b> Solicitações - Categorias</b> </h3>
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 
@@ -23,7 +43,13 @@ export default function solicitacoes () {
               <div className="card-body">
                 <h6 className="card-title text-body font-weight-bold">Faixa de pedestre</h6>
                 <Link href='/solicitacoes-form'>
+                <button id='bt1' className="btn btn" type="button" btn-lg onClick={()=>{
+                    console.log(categoria)
+                    localStorage.setItem('categoria',categoria[0].idcategoira)
+                }}>Solicitações</button>
+
                 <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
+
                 </Link>
               </div>
             </div>
