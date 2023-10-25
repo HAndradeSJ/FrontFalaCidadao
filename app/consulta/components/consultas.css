@@ -35,6 +35,16 @@ img {
     height: 40px;
 
 }
+.boxs{
+    width:100%;
+    margin-top:2%;
+    height:75vh;
+    display:flex;
+    flex-direction:column;
+    align-items:left;
+    justify-content:left;
+
+}
 
 /* Media Query para telas menores (até 768px de largura) */
 @media (max-width: 768px) {
