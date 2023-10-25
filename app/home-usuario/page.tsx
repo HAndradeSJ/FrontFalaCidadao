@@ -21,7 +21,7 @@ export default function homeUsuario() {
        <Link href='/solicitacoes'>
         <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
         </Link>
-        <Link href='/consultas'>
+        <Link href='/consulta'>
         <button id='bt2' className="btn btn" type="button" btn-lg>Consultas</button>
        </Link>
       </div>
