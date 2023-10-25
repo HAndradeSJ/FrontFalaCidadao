@@ -30,11 +30,8 @@ export default function solicitacoes () {
   return (
     <>
     <Navbar2/>
-        <h3><b> Solicitações - Categorias</b> </h3>
+        <h3 id='h3'> Solicitações - Categorias </h3>
 
-
- <Navbar2/>
-        <h3> <b> Solicitações - Categorias</b> </h3>
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 
