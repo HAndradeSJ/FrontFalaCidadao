@@ -10,13 +10,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function homeUsuario() {
-<<<<<<< HEAD
    
-=======
-    useEffect(() => {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
->>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
     return (
     <>
       <Navbar2 />

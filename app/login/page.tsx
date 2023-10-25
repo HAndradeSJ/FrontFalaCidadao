@@ -8,10 +8,7 @@ import { criarUsers, login } from '../api/loginApi';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
-<<<<<<< HEAD
 import { useRouter } from 'next/navigation';
-=======
->>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
 
 export default function Login() {
   const objectUSuario = {
@@ -22,7 +19,6 @@ export default function Login() {
     email: null,
     senha: null,
   };
-<<<<<<< HEAD
   const Router = useRouter();
   const [Cadastro, setCadastro] = useState(false);
   const [Usuarios, setUSuario] = useState(objectUSuario);
@@ -96,50 +92,6 @@ export default function Login() {
         }
 
       
-=======
-
-  const [Cadastro, setCadastro] = useState(false);
-  const [Usuarios, setUSuario] = useState(objectUSuario);
-  function onchange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    setUSuario({ ...Usuarios, [name]: value });
-  }
-  const alternaForm = () => {
-    const anterior = Cadastro;
-    setCadastro(!anterior);
-
-  }
-  const enviar = async () => {
-    try {
-      if (Cadastro == true) {
-        const response = await criarUsers(Usuarios);
-        console.log(response);
-
-        if (response.status === 'success') {
-          Swal.fire({
-            icon: 'success',
-            title: 'Cadastro feito com sucesso!',
-          });
-
-          setTimeout(() => {
-            window.location.href = '../home-usuario';
-          }, 2000);
-        }
-      } else {
-        const response = await login(Usuarios);
-        console.log(response);
-
-        if (response.status === 'success') {
-          Swal.fire({
-            icon: 'success',
-            title: 'Login feito com sucesso!',
-          });
-
-          setTimeout(() => {
-            window.location.href = '../home-usuario';
-          }, 2000);
-        }
->>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
       }
     } catch (error) {
       console.error(error);
@@ -148,13 +100,7 @@ export default function Login() {
         title: 'Erro',
         text: 'Algo deu errado!',
       });
-<<<<<<< HEAD
       
-=======
-      setTimeout(() => {
-        window.location.href = '../not-found';
-      }, 2000);
->>>>>>> d8d80b882a09652bf5b1e6ed946e242faeae055b
     }
   }
 

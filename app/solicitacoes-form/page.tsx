@@ -6,19 +6,28 @@ import { Navbar2 } from '@/shared/componentes/navbar2';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { solicitar } from '../api/solicitacoesApi';
+import Swal from 'sweetalert2';
+import { useRouter } from 'next/navigation';
+
 
 
 export default function solicitacoesForm() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const Router = useRouter();
     const objectSolicitar  = {
-        categoria: '',
+        
         bairro: '',
-        rua: '',
+        pontoref:'',
+        lougradouro:'',
         numero: '',
-        referencia: '',
         descricao: '',
     };
 
+    
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [solicitacao, setSolicitacao] = useState(objectSolicitar);
+    
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [categoria, setCategoria] = useState('');
 
     function onchange (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -33,12 +42,27 @@ export default function solicitacoesForm() {
                 categoria,
             };
             const response = await solicitar(data);
-            console.log(response);
+            if(response.status == 200){
+                Swal.fire({
+                    icon: 'success',
+                    title: `${response.data.response}`,
+                  });
+                  Router.push('/consulta')
+
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title:`${response.data.response}`,	
+                  });
+                
+            }
+            
         } catch (error) {
             console.error(error);
         }
     };
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
       }, []);
@@ -55,7 +79,7 @@ export default function solicitacoesForm() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Rua:</label>
-                    <input onChange={onchange} type="text" className="form-control" name='rua'/>
+                    <input onChange={onchange} type="text" className="form-control" name='logradouro'/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Número:</label>
@@ -63,24 +87,12 @@ export default function solicitacoesForm() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Ponto de referência:</label>
-                    <input onChange={onchange} type="text" className="form-control" name='referencia'/>
+                    <input onChange={onchange} type="text" className="form-control" name='pontoref'/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Descrição:</label>
                     <input onChange={onchange} type="text" className="form-control" name='descricao'/>
                 </div>
-
-
-               {/*  <h4>Solicitação</h4>
-                <p>Tipo de problema:</p>
-                <select className="form-select" aria-label="Default select example"  onChange={(e) => setCategoria(e.target.value)} value={categoria}>
-                    <option disabled selected  value="">Categoria...</option>
-                    <option value="1">Faixas de pedestres</option>
-                    <option value="2">Placas de trânsito</option>
-                    <option value="3">Poda ou retirada de árvores</option>
-                    <option value="4">Manutenção de ruas, estradas, praças, etc.</option>
-                    <option value="5">Iluminação Pública</option>
-                </select> */}
                                         
                 <h4>Fotos</h4>
                 <div>
