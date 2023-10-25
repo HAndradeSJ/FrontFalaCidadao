@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getCategoria = async ()  => {
   try{
-     const response =  await axios.get('http://10.10.0.217:3080/categoria/getall')
+     const response =  await axios.get('http://192.168.0.110:3080/categoria/getall')
           const array = response.data.response;
           return array
 

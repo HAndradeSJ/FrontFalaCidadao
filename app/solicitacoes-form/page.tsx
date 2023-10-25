@@ -8,12 +8,14 @@ import { useEffect } from 'react';
 import { solicitar } from '../api/solicitacoesApi';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
+import { SolicitacaoDto } from '@/shared/types/types';
 
 
 
 export default function solicitacoesForm() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const Router = useRouter();
+    
     const objectSolicitar  = {
         
         bairro: '',
@@ -28,7 +30,7 @@ export default function solicitacoesForm() {
     const [solicitacao, setSolicitacao] = useState(objectSolicitar);
     
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [categoria, setCategoria] = useState('');
+    const [categoria, setCategoria] = useState<String|null>('')
 
     function onchange (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
        const {name,value} = e.target;
@@ -37,11 +39,8 @@ export default function solicitacoesForm() {
 
     const enviar = async () => {
         try {
-            const data = {
-                ...solicitacao,
-                categoria,
-            };
-            const response = await solicitar(data);
+       
+            const response = await solicitar(solicitacao);
             if(response.status == 200){
                 Swal.fire({
                     icon: 'success',
@@ -79,7 +78,7 @@ export default function solicitacoesForm() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Rua:</label>
-                    <input onChange={onchange} type="text" className="form-control" name='logradouro'/>
+                    <input onChange={onchange} type="text" className="form-control" name='lougradouro'/>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Número:</label>

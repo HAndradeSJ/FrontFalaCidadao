@@ -21,7 +21,6 @@ export default function solicitacoes () {
     async function getall(){
      const response = await getCategoria()
       setCategoria(response);
-  
     }
     getall()
       
@@ -39,9 +38,9 @@ export default function solicitacoes () {
               <Image src={faixa} alt='documentos' className="card-img-top" />
               <div className="card-body">
                 <h6 className="card-title text-body font-weight-bold">{categoria[0]?.categoria}</h6>
-                <Link href={`/solicitacoes-form`}>
+                <Link href={`/solicitacoes-form/`}>
                 <button id='bt1' className="btn btn" type="button" btn-lg onClick={()=>{
-                    localStorage.setItem('idcategoria',(categoria[0]?.idcategoira));
+                    localStorage.setItem('idcategoria',categoria[0]?.idcategoria)
                 }}>Solicitações</button>
                 </Link>
               </div>

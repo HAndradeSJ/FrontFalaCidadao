@@ -1,6 +1,6 @@
 export interface Categoria{
   categoria: string;
-  idcategoira: string;
+  idcategoria: string;
   fk_idsecretaria: string;  
   log_criacao: string;
   log_update: string;
@@ -11,7 +11,7 @@ export interface Categoria{
   
 export interface SolicitacaoDto {
   idsolicitacao:string
-  protocolo:number
+  chamado:string
   data_abertura:string
   data_encerramento:string
   fk_idusuario : string

@@ -19,6 +19,7 @@
 }
 
 .description a {
+  color:  #FFA53D;
   display: flex;
   justify-content: center;
   align-items: center;

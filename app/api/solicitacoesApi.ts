@@ -3,34 +3,31 @@ import api from "@/shared/componentes/utils/my-axios";
 import axios from "axios";
 
 const token = localStorage.getItem('token')
+const idcategoria = localStorage.getItem('idcategoria');
 
 
 interface solicitacao {
-    categoria: string;
-    bairro: string;
-    lougradouro: string;
-    numero: string;
-    pontoref: string;
-    descricao: string;
+    categoraia: string;
+    bairro:string,
+    pontoref:string,
+    lougradouro:string,
+    numero:string,
+    descricao:string,
 }
+export const solicitar = async (solicitar:any)=> {
 
-export const solicitar = async (solicitar: solicitacao): Promise<any> => {
-    const config = {
-        token:token
-    }
-    const { bairro, lougradouro, numero, pontoref, descricao, categoria} = solicitar
     const solicitacao = {
-        categoria: categoria,
-        bairro: bairro,
-        logradouro:lougradouro,
-        numero: numero,
-        pontoderef:pontoref,
-        descricao: descricao,
+        fk_idcategoria:idcategoria,
+        bairro:solicitar.bairro,
+        logradouro:solicitar.lougradouro,
+        numero:solicitar.numero,
+        pontoderef:solicitar.pontoref,
+        descricao:solicitar.descricao,
         imagemUrl:"",
     }
     console.log(solicitacao)
 
-    const res = await axios.post(`http://10.10.0.217:3080/solicitacao/create`,solicitacao,{
+    const res = await axios.post(`http://192.168.0.110:3080/solicitacao/create`,solicitacao,{
         headers: {
             "Content-type": "application/json",
               "Authorization": `Bearer ${token}`,
