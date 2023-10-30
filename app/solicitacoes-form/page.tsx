@@ -9,11 +9,13 @@ import { solicitar } from '../api/solicitacoesApi';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
 import { SolicitacaoDto } from '@/shared/types/types';
+import axios from 'axios';
 
 
 
 export default function solicitacoesForm() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
+    const token = localStorage.getItem('token')
     const Router = useRouter();
     
     const objectSolicitar  = {
@@ -39,8 +41,25 @@ export default function solicitacoesForm() {
 
     const enviar = async () => {
         try {
-       
-            const response = await solicitar(solicitacao);
+            var pathImage = ''
+            const input = document.getElementById("file");
+            const file = input?.files[0];
+            const formData = new FormData();
+            formData.append('file',file)
+            formData.append("filesolicictação","teste")
+
+            axios.post('`http://10.10.0.217:3080/solicitacao/upload/image'formData{
+                headers: {
+                    "Content-type": "application/form-data",
+                    "Authorization": `Bearer ${token}`,
+                },
+                }).then((response)=>{
+                    pathImage = response.data.urlImage
+
+                }).catch((error)=>{
+                    console.log(error);
+                })
+            const response = await solicitar(solicitacao,pathImage);
             if(response.status == 200){
                 Swal.fire({
                     icon: 'success',
@@ -96,7 +115,7 @@ export default function solicitacoesForm() {
                 <h4>Fotos</h4>
                 <div>
                     <label htmlFor="formFileLg" className="form-label">Adicione aqui fotos que você tirou do problema que deseja fazer uma solicitação</label>
-                    <input className="form-control form-control-lg" id="formFileLg" type="file"/>
+                    <input className="form-control form-control-lg" id="file" type="file" name="file"/>
                 </div>
             </form>
 

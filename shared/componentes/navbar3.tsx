@@ -21,9 +21,6 @@ export function Navbar3 () {
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
         <a className="nav-link active" aria-current="page" href="./agente-solicitacao">Solicitações</a>
-        <a className="nav-link active" aria-current="page" href="./agente-andamento">Em andamento</a>
-        <a className="nav-link active" aria-current="page" href="./agente-concluido">Concluído</a>
-        <a className="nav-link active" aria-current="page" href="./agente-cancelado">Cancelado</a>
       </div>
     </div>
     {/* <Link href='/perfil'><Image id='perfil' src={perfil} alt='perfil' style={{width:'3rem', height: '3rem'}}/></Link> */}

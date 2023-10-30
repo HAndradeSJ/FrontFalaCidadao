@@ -7,6 +7,17 @@ export interface Categoria{
 
 }
 
+export interface userDto {
+  idusuario:string
+  nome: string
+  idade: number
+  cpf: string
+  telefone : string
+  funcao : string
+  email : string
+  senha : string
+  idagente : string
+}
   
   
 export interface SolicitacaoDto {

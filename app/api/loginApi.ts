@@ -42,7 +42,7 @@ export const login = async (users : usuarios) => {
         senha : senha,        
     } 
 
-    const res = await axios.post(`http://192.168.0.110:3080/auth/login`,usuarios)
+    const res = await axios.post(`http://10.10.0.217:3080/auth/login`,usuarios)
     localStorage.setItem('token',res.data.response.token);
     return res
 }

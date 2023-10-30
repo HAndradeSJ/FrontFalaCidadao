@@ -6,8 +6,7 @@ body {
 #agente {
     margin-top: 4rem;
     margin-left: 2rem;
-    width: 55rem;
-    height: 30rem;
+    max-width:40%;
 }
 
 #h1 {
@@ -17,7 +16,9 @@ body {
     margin-top: 2rem;
     font-weight: bold;
 }
-
+#btn{
+    margin-top:3%;
+}
 #bt1 {
     font-weight: bold;
     color: #11226E;
