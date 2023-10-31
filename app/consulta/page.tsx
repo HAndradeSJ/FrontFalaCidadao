@@ -282,7 +282,7 @@ export default function consulta() {
                 </button>
               </div>
               <div className="divImages">
-                <Image  alt="logo" src={image[0]?.imagemUrl} />
+                <Image  alt="logo" src={`http://10.10.0.217:3080/${image[0]?.imagemUrl}`} width={100}  height={100}/>
               </div>
             </motion.div>
           </motion.div>

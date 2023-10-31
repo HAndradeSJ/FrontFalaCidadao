@@ -10,13 +10,15 @@ import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
 import { SolicitacaoDto } from '@/shared/types/types';
 import axios from 'axios';
+import { Router } from 'next/router';
 
 
 
 export default function solicitacoesForm() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const token = localStorage.getItem('token')
-    const Router = useRouter();
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
     
     const objectSolicitar  = {
         
@@ -48,7 +50,7 @@ export default function solicitacoesForm() {
             formData.append('file',file)
             formData.append("filesolicictação","teste")
 
-            axios.post('`http://10.10.0.217:3080/solicitacao/upload/image'formData{
+            axios.post('`http://10.10.0.217:3080/solicitacao/upload/image',formData,{
                 headers: {
                     "Content-type": "application/form-data",
                     "Authorization": `Bearer ${token}`,
@@ -65,7 +67,7 @@ export default function solicitacoesForm() {
                     icon: 'success',
                     title: `${response.data.response}`,
                   });
-                  Router.push('/consulta')
+                  router.push('/consulta')
 
             }else{
                 Swal.fire({

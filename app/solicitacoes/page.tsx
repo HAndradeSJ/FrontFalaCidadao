@@ -1,91 +1,159 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-'use client'
-import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
-import React, { useEffect, useState } from 'react'
-import 'app/solicitacoes/components/solicitacoes.css'
-import Image from 'next/image'
-import faixa from '/images/faixa.png'
-import placa from '/images/placas.jpg'
-import arvore from '/images/arvores.jpg'
-import ruas from '/images/ruas.jpg'
-import iluminacao from '/images/iluminacao.jpg'
-import { Navbar2 } from '@/shared/componentes/navbar2'
-import Link from 'next/link';
-import { getCategoria } from '../api/categoria'
-import { Categoria } from '@/shared/types/types'
+"use client";
+import React, { useEffect, useState } from "react";
+import "./components/solicitacoes.css";
+import Image from "next/image";
+import faixa from "/images/faixa.png";
+import placa from "/images/placas.jpg";
+import arvore from "/images/arvores.jpg";
+import ruas from "/images/ruas.jpg";
+import iluminacao from "/images/iluminacao.jpg";
+import { Navbar2 } from "@/shared/componentes/navbar2";
+import Link from "next/link";
+import { getCategoria } from "../api/categoria";
+import { Categoria } from "@/shared/types/types";
 
-
-export default function solicitacoes () {
-  const [categoria,setCategoria] = useState<Categoria[]>([]as Categoria[])
- useEffect(() => {
-    async function getall(){
-     const response = await getCategoria()
+export default function solicitacoes() {
+  const [categoria, setCategoria] = useState<Categoria[]>([] as Categoria[]);
+  useEffect(() => {
+    async function getall() {
+      const response = await getCategoria();
       setCategoria(response);
     }
-    getall()
-      
- }, []);
-
+    getall();
+  }, []);
 
   return (
     <>
-    <Navbar2/>
-        <h3><b> Solicitações - Categorias</b> </h3>
-        <div className="container justify-content-center  align-items-center">
-          <div className='row'>
-
-          <div className="card" style={{ width: "20rem", height: "20rem" }} key={"1"}> 
-              <Image src={faixa} alt='documentos' className="card-img-top" />
-              <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">{categoria[0]?.categoria}</h6>
-                <Link href={`/solicitacoes-form/`}>
-                <button id='bt1' className="btn btn" type="button" btn-lg onClick={()=>{
-                    localStorage.setItem('idcategoria',categoria[0]?.idcategoria)
-                }}>Solicitações</button>
-                </Link>
-              </div>
+      <Navbar2 />
+      <div className="mains">
+        <div style={{ width: "100%" }}>
+          <h1 className="title">Solicitação - Categorias</h1>
+        </div>
+        <div className="box">
+          <div className="cards">
+            <div className="img">
+              <Image src={faixa} alt="documentos" className="images" />
             </div>
-            
-            <div className="card" style={{ width: "20rem", height: "20rem" }}>
-              <Image src={placa} alt='documentos' className="card-img-top" />
-              <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">Placas de trânsito</h6>
-                <Link href='/solicitacoes-form'>
-                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
-                </Link>
+            <div className="quads">
+              <div className="boxss">
+                <p className="texts">Faixa de Pedestres</p>
+                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
               </div>
+
+              <Link href={"/solicitacoes-form/"}>
+                <button
+                  className="buttonSolici"
+                  onClick={() => {
+                    localStorage.setItem(
+                      "idcategoria",
+                      categoria[0]?.idcategoria
+                    );
+                  }}
+                >
+                  Solicitar
+                </button>
+              </Link>
             </div>
-
-            <div className="card" style={{ width: "20rem", height: "20rem" }}>
-              <Image src={arvore} alt='documentos' className="card-img-top" />
-              <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">Poda ou retirada de árvores</h6>
-                <Link href='/solicitacoes-form'>
-                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
-                </Link>
-              </div>
-            </div>  
-
-            <div className="card" style={{ width: "20rem", height: "20rem" }}>
-              <Image src={ruas} alt='documentos' className="card-img-top" />
-              <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">Manutenção de ruas, estradas, praças, etc.</h6>
-                <Link href='/solicitacoes-form'>
-                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
-                </Link>
-              </div>
+          </div>
+          <div className="cards">
+            <div className="img">
+              <Image src={placa} alt="documentos" className="images" />
             </div>
-
-            <div className="card" style={{ width: "20rem", height: "20rem" }}>
-              <Image src={iluminacao} alt='documentos' className="card-img-top" />
-              <div className="card-body">
-                <h6 className="card-title text-body font-weight-bold">Iluminação pública</h6>
-                <Link href='/solicitacoes-form'>
-                <button id='bt1' className="btn btn" type="button" btn-lg>Solicitações</button>
-                </Link>
+            <div className="quads">
+              <div className="boxss">
+                <p className="texts">Placas de Trânsitos</p>
+                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
               </div>
+              <Link href={"/solicitacoes-form/"}>
+                <button
+                  className="buttonSolici"
+                  onClick={() => {
+                    localStorage.setItem(
+                      "idcategoria",
+                      categoria[1]?.idcategoria
+                    );
+                  }}
+                >
+                  Solicitar
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="cards">
+            <div className="img">
+              <Image src={arvore} alt="documentos" className="images" />
+            </div>
+            <div className="quads">
+              <div className="boxss">
+                <p className="texts">Retirada de Árovores</p>
+                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+              </div>
+              <Link href={"/solicitacoes-form/"}>
+                <button
+                  className="buttonSolici"
+                  onClick={() => {
+                    localStorage.setItem(
+                      "idcategoria",
+                      categoria[2]?.idcategoria
+                    );
+                  }}
+                >
+                  Solicitar
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="cards">
+            <div className="img">
+              <Image src={ruas} alt="documentos" className="images" />
+            </div>
+            <div className="quads">
+              <div className="boxss">
+                <p className="texts">Manutenção de Vias</p>
+                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+              </div>
+              <Link href={"/solicitacoes-form/"}>
+                <button
+                  className="buttonSolici"
+                  onClick={() => {
+                    localStorage.setItem(
+                      "idcategoria",
+                      categoria[3]?.idcategoria
+                    );
+                  }}
+                >
+                  Solicitar
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="cards">
+            <div className="img">
+              <Image src={iluminacao} alt="documentos" className="images" />
+            </div>
+            <div className="quads">
+              <div className="boxss">
+                <p className="texts">Iluminação pública</p>
+                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+              </div>
+              <Link href={"/solicitacoes-form/"}>
+                <button
+                  className="buttonSolici"
+                  onClick={() => {
+                    localStorage.setItem(
+                      "idcategoria",
+                      categoria[4]?.idcategoria
+                    );
+                  }}
+                >
+                  Solicitar
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-        </>
-)};
+      </div>
+    </>
+  );
+}
