@@ -18,6 +18,7 @@ export default function solicitacoes() {
   useEffect(() => {
     async function getall() {
       const response = await getCategoria();
+      console.log(response);
       setCategoria(response);
     }
     getall();
@@ -38,7 +39,7 @@ export default function solicitacoes() {
             <div className="quads">
               <div className="boxss">
                 <p className="texts">Faixa de Pedestres</p>
-                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+                <p style={{ fontWeight: "300" }}>Secretária de Obras e Vias</p>
               </div>
 
               <Link href={"/solicitacoes-form/"}>
@@ -47,7 +48,7 @@ export default function solicitacoes() {
                   onClick={() => {
                     localStorage.setItem(
                       "idcategoria",
-                      categoria[0]?.idcategoria
+                      categoria[2]?.idcategoria
                     );
                   }}
                 >
@@ -63,7 +64,7 @@ export default function solicitacoes() {
             <div className="quads">
               <div className="boxss">
                 <p className="texts">Placas de Trânsitos</p>
-                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+                <p style={{ fontWeight: "300" }}>Secretária de Obras e Vias</p>
               </div>
               <Link href={"/solicitacoes-form/"}>
                 <button
@@ -95,7 +96,7 @@ export default function solicitacoes() {
                   onClick={() => {
                     localStorage.setItem(
                       "idcategoria",
-                      categoria[2]?.idcategoria
+                      categoria[0]?.idcategoria
                     );
                   }}
                 >
@@ -111,7 +112,7 @@ export default function solicitacoes() {
             <div className="quads">
               <div className="boxss">
                 <p className="texts">Manutenção de Vias</p>
-                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+                <p style={{ fontWeight: "300" }}>Secretária de Obras e Vias</p>
               </div>
               <Link href={"/solicitacoes-form/"}>
                 <button
@@ -135,7 +136,7 @@ export default function solicitacoes() {
             <div className="quads">
               <div className="boxss">
                 <p className="texts">Iluminação pública</p>
-                <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
+                <p style={{ fontWeight: "300" }}>Secretária de Obras e Vias</p>
               </div>
               <Link href={"/solicitacoes-form/"}>
                 <button

@@ -14,8 +14,9 @@ interface solicitacao {
     numero:string,
     descricao:string,
 }
-export const solicitar = async (solicitar:any,path:String)=> {
+export const solicitar = async (solicitar:any,path:string)=> {
 
+    console.log(path)
     const solicitacao = {
         fk_idcategoria:idcategoria,
         bairro:solicitar.bairro,
@@ -27,7 +28,7 @@ export const solicitar = async (solicitar:any,path:String)=> {
     }
     console.log(solicitacao)
 
-    const res = await axios.post(`http://10.10.0.217:3080/solicitacao/create`,solicitacao,{
+    const res = await api.post(`/solicitacao/create`,solicitacao,{
         headers: {
             "Content-type": "application/json",
               "Authorization": `Bearer ${token}`,

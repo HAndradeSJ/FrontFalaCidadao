@@ -12,6 +12,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { SolicitacaoDto } from "@/shared/types/types";
 import axios from "axios";
 import Image from "next/image";
+import api from "@/shared/componentes/utils/my-axios";
 
 export default function consulta() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -31,8 +32,8 @@ export default function consulta() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios
-      .get(`http://10.10.0.217:3080/solicitacao/get/mysolici`, {
+    api
+      .get(`/solicitacao/get/mysolici`, {
         headers: {
           "Content-type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -174,11 +175,11 @@ export default function consulta() {
                         fontSize: "1rem",
                       }}
                     >
-                      Justivicativa
+                      Justicativa
                     </p>
                     <div className="mincard">
                       {verMais[0]?.justifictiva == null
-                        ? "Idefinida"
+                        ? "Indefinida"
                         : verMais[0].justifictiva}
                     </div>
                   </div>
@@ -282,7 +283,10 @@ export default function consulta() {
                 </button>
               </div>
               <div className="divImages">
-                <Image  alt="logo" src={`http://10.10.0.217:3080/${image[0]?.imagemUrl}`} width={100}  height={100}/>
+                <div className="editdiv">
+
+                <Image className="Photo"  alt="logo" src={`http://192.168.0.105:3080/imagens/${image[0]?.imagemUrl}`} width={600}  height={600}/>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -349,7 +353,7 @@ export default function consulta() {
                             setShowImage(true)
                           }}
                         >
-                          <BsCardImage size={30} color={" #162E98"} />
+                          <BsCardImage size={32} color={" #162E98"} />
                         </div>
                         <button
                           className="button"

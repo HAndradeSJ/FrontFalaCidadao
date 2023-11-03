@@ -17,6 +17,17 @@ h2 {
     font-weight: bold;
 }
 
+.editdiv{
+    width:100%;
+    height:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Photo{
+    width:90%;
+    height:100%;
+}
 input {
     width: 50%;
     border: 2px solid  #FFA53D;
@@ -87,7 +98,7 @@ img {
     padding:20px;
     display: flex;
     justify-content:flex-end;
-    gap:13rem;
+    gap:16rem;
     align-items: center;
 }
 
@@ -130,7 +141,8 @@ img {
     cursor: pointer;
 }
 .divImages{
-    margin-top:6%;
+    
+    margin-top:1%;
     width:90%;
     height:90%;
 }
@@ -168,12 +180,12 @@ justify-content:space-between;
 }
 .info{
     display: flex;
-    margin-top:10%;
+    margin-top:20%;
 }
 
 .button{
     font-size: 0.75rem;
-    margin-top:6%;
+    margin-top:16%;
     width:40%;
     height:5vh;
     background-color:   #162E98;

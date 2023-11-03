@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { SolicitacaoDto } from '@/shared/types/types';
 import axios from 'axios';
 import { Router } from 'next/router';
+import api from '@/shared/componentes/utils/my-axios';
 
 
 
@@ -43,39 +44,40 @@ export default function solicitacoesForm() {
 
     const enviar = async () => {
         try {
-            var pathImage = ''
+            
             const input = document.getElementById("file");
             const file = input?.files[0];
             const formData = new FormData();
             formData.append('file',file)
             formData.append("filesolicictação","teste")
 
-            axios.post('`http://10.10.0.217:3080/solicitacao/upload/image',formData,{
+            api.post("/solicitacao/upload/image",formData,{
                 headers: {
                     "Content-type": "application/form-data",
                     "Authorization": `Bearer ${token}`,
                 },
-                }).then((response)=>{
-                    pathImage = response.data.urlImage
-
-                }).catch((error)=>{
-                    console.log(error);
+                }).then(async(responses)=>{
+                    
+                    const pathImage = responses.data.response
+                    console.log(pathImage)
+                    const response = await solicitar(solicitacao,pathImage);
+                    if(response.status == 200){
+                        Swal.fire({
+                            icon: 'success',
+                            title: `${response.data.response}`,
+                          });
+                          router.push('/consulta')
+        
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title:`${response.data.response}`,	
+                          });
+                        
+                    }
                 })
-            const response = await solicitar(solicitacao,pathImage);
-            if(response.status == 200){
-                Swal.fire({
-                    icon: 'success',
-                    title: `${response.data.response}`,
-                  });
-                  router.push('/consulta')
-
-            }else{
-                Swal.fire({
-                    icon: 'error',
-                    title:`${response.data.response}`,	
-                  });
-                
-            }
+            
+           
             
         } catch (error) {
             console.error(error);
