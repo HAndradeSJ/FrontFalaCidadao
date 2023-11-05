@@ -12,7 +12,13 @@ h3 {
 .card {
     /*color:#1934B3;*/
     margin: 0 20px; /* Espaço horizontal*/
+    font-size: medium;
   } 
+
+  .card-title {
+    font-weight: bold;
+    font-size: larger;
+  }
 
 
 

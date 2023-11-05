@@ -1,0 +1,20 @@
+/* navbar-hover.css */
+#falaCidadao {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+#divNav {
+  margin-left: 5rem;
+  font-size: large;
+}
+
+.navbar:hover {
+  cursor: pointer;
+} 
+
+/* navbar-hover.css */
+.navbar-hover:hover {
+  color: #ffffff;
+  background-color: #FFA53D; 
+}
