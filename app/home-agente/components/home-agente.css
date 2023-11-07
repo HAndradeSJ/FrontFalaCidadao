@@ -15,8 +15,9 @@ body {
     font-size: 40px;
     margin-left: 5rem;
     margin-top: 2rem;
-    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 #btn{
     margin-top:3%;
 }

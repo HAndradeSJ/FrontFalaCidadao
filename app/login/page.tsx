@@ -108,7 +108,7 @@ export default function Login() {
   return (
     <main>
       <Navbar />
-      <h1 id='texte'> <b> {Cadastro ? "CADASTRO" : "LOGIN"} </b> </h1>
+      <h1 id='texte'> {Cadastro ? "CADASTRO" : "LOGIN"} </h1>
 
       <div id='div'>
         <form>

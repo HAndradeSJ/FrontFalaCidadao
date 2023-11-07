@@ -1,10 +1,9 @@
+'use client'
 import 'node_modules/bootstrap/dist/css/bootstrap.min.css' 
 import React from 'react'
 import { Navbar } from '@/shared/componentes/navbar'
 import CarouselComponent from '../shared/componentes/carrossel'
-
 import { Carousel } from 'react-bootstrap'
-import 'app/globals.css'
 import './home.css'
 import Doc from 'images/doc.jpg'
 import Tempo from 'images/tempo.jpg'
@@ -26,7 +25,9 @@ export default function home () {
         <CarouselComponent />
 
         <br />
-        <h3> <b>Vantagens do Fala Cidadão </b> </h3>
+
+        <h3> Vantagens do Fala Cidadão </h3>
+        
         <div className="container justify-content-center  align-items-center">
           <div className='row'>
 

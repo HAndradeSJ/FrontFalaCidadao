@@ -4,9 +4,11 @@ body {
 }
 
 h3 {
-    color: #1934B3;
-    font-size: 40px;
+    color: #FFA53D;
+    font-size: 35px;
     margin-left: 2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/*     font-family: cursive; */
 }
 
 .card {
