@@ -18,7 +18,7 @@ export function Navbar2() {
     <nav style={{ backgroundColor: "#162E98" }} className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <Image id="perfil" src={logo} alt="logo" style={{ width: '3rem', height: '3rem', marginLeft: '3rem' }} />
-        <a className="navbar-brand" href="./home-usuario" id='falaCidadao'>
+        <a className="navbar-brand" href="./home-agente" id='falaCidadao'>
           Fala Cidadão
           </a>
         <button
@@ -34,11 +34,11 @@ export function Navbar2() {
         
         <div className="collapse navbar-collapse" >
           <div className="navbar-nav" id='divNav'>
-            <a className="nav-link active navbar-hover" aria-current="page" href="./solicitacoes" style={{ marginLeft: '5rem' }}>
-              Solicitações
+            <a className="nav-link active navbar-hover"id='menus' aria-current="page" href="./agente-solicitacao" style={{ marginLeft: '5rem' }}>
+              Consulta
               </a>
-            <a className="nav-link active navbar-hover" aria-current="page" href="./consulta" style={{ marginLeft: '7rem' }}>
-              Consultas
+            <a className="nav-link active navbar-hover"id-='menus' aria-current="page" href="./agente-minhassolicitacao" style={{ marginLeft: '7rem' }}>
+              Minhas solicitações
               </a>
           </div>
         </div>

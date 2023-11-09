@@ -6,17 +6,21 @@ import agente from 'images/agente.png'
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { Navbar3 } from '@/shared/componentes/navbar3';
+import { Navbar2 } from '@/shared/componentes/navbar2';
 
 
 export default function homeAgente() {
 
     return (
     <>
-      <Navbar3 />
+      <Navbar2 />
+      <main style={{width:'100%', height:'100%',display:'flex',justifyContent:'space-between'}}>
+      <div style={{width:'50%'}}>
       <h1 id='h1'>Como podemos ajudar?</h1>
       <Image src={agente} alt='agente' id='agente' />
+      </div>
 
-      <div className="d-grid gap-2 col-3 mx-auto ">
+      <div className="lista">
        <Link href='/agente-solicitacao'>
         <button id='bt1' className="btn" type="button" btn-lg>Solicitações</button>
         </Link>
@@ -24,6 +28,7 @@ export default function homeAgente() {
         <button id='bt1' className="btn" type="button" btn-lg>Minhas Solicitações</button>
         </Link>
       </div>
+      </main>
     </>
   )
 }
