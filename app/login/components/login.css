@@ -8,6 +8,7 @@ body {
     position: absolute;
     color: #1934B3;
     font-size: 25px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #div {
@@ -19,7 +20,7 @@ body {
     margin-top: 5%;
     position: absolute;
     color: #162E98;
-    font-size: 15px;
+    font-size: 15.5px;
     font-weight: bold;
 }
 

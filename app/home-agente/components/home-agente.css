@@ -6,7 +6,8 @@ body {
 #agente {
     margin-top: 4rem;
     margin-left: 2rem;
-    max-width:40%;
+    width: 55rem;
+    height: 30rem;
 }
 
 #h1 {
@@ -14,16 +15,18 @@ body {
     font-size: 40px;
     margin-left: 5rem;
     margin-top: 2rem;
-    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 #btn{
     margin-top:3%;
 }
+
 #bt1 {
     font-weight: bold;
     color: #11226E;
     background-color: #FFA53D;
-    margin-top: -55rem;
+    margin-top: -30rem;
     width: 20rem;
     margin-left: 30rem;
     font-size: large;
@@ -61,6 +64,14 @@ body {
 
 /* Media query para telas menores */
 @media screen and (max-width: 768px) {
+
+    #agente {
+        width: 100%;
+        height: auto;
+        margin: auto; 
+    }
+
+    
     #solicita {
         margin-top: auto;
         margin-left: auto;
@@ -76,7 +87,7 @@ body {
 
     #bt1,
     #bt2 {
-        margin-top: auto;
+        margin-top: 1rem;
         width: 100%;
         margin-left: auto;
     }
