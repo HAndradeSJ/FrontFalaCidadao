@@ -12,16 +12,21 @@ import { SolicitacaoDto } from "@/shared/types/types";
 import axios from "axios";
 import Image from "next/image";
 import api from "@/shared/componentes/utils/my-axios";
+import { Inputs } from "@/shared/componentes/inputs";
+import { Radio } from "@/shared/componentes/radio";
+import { FaLess } from "react-icons/fa";
 import Swal from "sweetalert2";
 
-export default function SolicitacaoAgente() {
+export default function MinhasSolicitacaoAgente() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [ecadastro, setecadastro] = useState(false);
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [actived1,setActived1] = useState(false);
+  const [actived2,setActived2] = useState(false);
   const [consulta, setConsulta] = useState<SolicitacaoDto[]>([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [showImage, setShowImage] = useState<boolean>(false);
-
+  const [justificativa,setJustificativa] = useState('');
   const [verMais, setVermais] = useState<SolicitacaoDto[]>([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState<SolicitacaoDto[]>([]);
@@ -73,29 +78,88 @@ export default function SolicitacaoAgente() {
     let data = consulta.filter((item) => item.idsolicitacao === id);
     setImage(data);
   }
-  function Atribuir(chamado: string) {
-    const chamados = {
-      chamado: chamado,
-    };
-    api
-      .put("/solicitacao/emandamento/solicitacao", chamados, {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${tokens}`,
-        },
-      })
-      .then((response) => {
-        console.log(response);
-        console.log("OI");
-        Swal.fire({
-          icon: "success",
-          title: `${response.data.response}`,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
+  async function ChangeStatus(chamado: string){
+    try{
+     
+      const status = localStorage.getItem('status');
+      const alterar = {
+          chamado:chamado,
+          justificativa:justificativa
+      }
+
+        if(status === 'Encerrado'){
+          try{
+            const token = localStorage.getItem('token');
+            const res = await api.put(`/solicitacao/encerrar/solicitacao`,alterar,{
+              headers: {
+                  "Content-type": "application/json",
+                    "Authorization":`Bearer ${token}`,
+              },
+          })
+          if(res.status == 200) {
+            Swal.fire({
+              icon: "success",
+              title:"Status da Solicitação alterada"
+            });
+            window.location.reload();
+          }
+          if(res.status == 400){
+            Swal.fire({
+              icon: "error",
+              title: `Ocorreu um erro ao alterar o status`,
+            });
+          }
+          }catch(err){
+            console.log(err);
+            Swal.fire({
+              icon: "error",
+              title: `Ocorreu um erro ao alterar o status`,
+            });
+          }
+        }else if(status === 'Recusado'){
+          try{
+            const token2 = localStorage.getItem('token');
+            const res = await api.put(`/solicitacao/recusar/solicitacao`,alterar,{
+              headers: {
+                  "Content-type":"application/json",
+                    "Authorization":`Bearer ${token2}`,
+              }, 
+          })
+          if(res.status == 200) {
+            Swal.fire({
+              icon: "success",
+              title:"Status da Solicitação alterada"
+            });
+            window.location.reload();
+          }
+          if(res.status == 400){
+            Swal.fire({
+              icon: "error",
+              title: `Ocorreu um erro ao alterar o status`,
+            });
+          }
+          }catch(err){
+            console.log(err)
+            Swal.fire({
+              icon: "error",
+              title: `Ocorreu um erro ao alterar o status`,
+            });
+          }
+        }else{
+          Swal.fire({
+            icon: "error",
+            title: `Ocorreu um erro ao alterar o status`,
+          });
+        }
+    }catch(err){
+      console.log(err)
+      Swal.fire({
+        icon: "error",
+        title: `Ocorreu um erro ao alterar o status`,
       });
   }
+}
+  
 
   return (
     <>
@@ -114,8 +178,8 @@ export default function SolicitacaoAgente() {
               transition={{ duration: 0.6 }}
             >
               <div className="modalheader">
-                <h1 style={{ color: " #FFA53D", fontWeight: "bold" }}>
-                  Solicitação
+                <h1 style={{ color: " #FFA53D", fontWeight: "bold",marginLeft:'20%'}}>
+                  Mudar status
                 </h1>
                 <button
                   className="closebutton"
@@ -128,6 +192,18 @@ export default function SolicitacaoAgente() {
               </div>
               <div className="modalbody">
                 <div className="column">
+                  <div className="inputs">
+                    <p
+                      style={{
+                        fontWeight: "bold",
+                        marginLeft: "2%",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Protocolo
+                    </p>
+                    <div className="mincard">{verMais[0]?.chamado}</div>
+                  </div>
                   <div className="inputs">
                     <p
                       style={{
@@ -152,21 +228,10 @@ export default function SolicitacaoAgente() {
                     </p>
                     <div className="mincard">{verMais[0]?.logradouro}</div>
                   </div>
-                  <div className="inputs">
-                    <p
-                      style={{
-                        fontWeight: "bold",
-                        marginLeft: "2%",
-                        fontSize: "1rem",
-                      }}
-                    >
-                      Número
-                    </p>
-                    <div className="mincard">{verMais[0]?.numero}</div>
-                  </div>
                 </div>
-                <div className="column">
-                  <div className="inputs">
+                <div className="column1">
+                    <Radio actived1={actived1} setActived1={setActived1}  setActived2={setActived2}actived2={actived2}/>
+                    <div className="inputs">
                     <p
                       style={{
                         fontWeight: "bold",
@@ -174,38 +239,15 @@ export default function SolicitacaoAgente() {
                         fontSize: "1rem",
                       }}
                     >
-                      Bairro
+                      Justificativa
                     </p>
-                    <div className="mincard">{verMais[0]?.bairro}</div>
-                  </div>
-                  <div className="inputs">
-                    <p
-                      style={{
-                        fontWeight: "bold",
-                        marginLeft: "2%",
-                        fontSize: "1rem",
-                      }}
-                    >
-                      Ponto de Referência
-                    </p>
-                    <div className="mincard">{verMais[0]?.pontoderef}</div>
-                  </div>
-                  <div className="inputs">
-                    <p
-                      style={{
-                        fontWeight: "bold",
-                        marginLeft: "2%",
-                        fontSize: "1rem",
-                      }}
-                    >
-                      Justicativa
-                    </p>
-                    <div className="mincard">
-                      {verMais[0]?.justifictiva == null
-                        ? "Indefinida"
-                        : verMais[0].justifictiva}
+                    <input type="text" className="inputJustificativa" onChange={(e)=>{
+                      setJustificativa(e.target.value);
+                    }} />
                     </div>
-                  </div>
+                    <button className="ButtonSend"  onClick={()=>{
+                             ChangeStatus(verMais[0]?.chamado)
+                    }}>Enviar</button>
                 </div>
               </div>
             </motion.div>
@@ -215,7 +257,7 @@ export default function SolicitacaoAgente() {
           </section>
           <strong>
             {" "}
-            <h2>Consultas</h2>
+            <h2>Minhas Solicitações</h2>
           </strong>
 
           <form action="">
@@ -324,7 +366,7 @@ export default function SolicitacaoAgente() {
             </section>
             <strong>
               {" "}
-              <h2>Consultas</h2>
+              <h2>Minhas Solicitações</h2>
             </strong>
 
             <form action="">
@@ -406,7 +448,7 @@ export default function SolicitacaoAgente() {
           </section>
           <strong>
             {" "}
-            <h2>Consultas</h2>
+            <h2>Minhas Solicitações</h2>
           </strong>
 
           <form action="">
@@ -461,11 +503,9 @@ export default function SolicitacaoAgente() {
                           {" "}
                           <button
                             className="button"
-                            onClick={() => {
-                              Atribuir(item?.chamado);
-                            }}
+
                           >
-                            Atribur
+                          
                           </button>
                           <button
                             className="button"
@@ -493,7 +533,7 @@ export default function SolicitacaoAgente() {
                               viewMore(item?.idsolicitacao);
                             }}
                           >
-                            Ver mais
+                           Status
                           </button>
                         </>
                       )}

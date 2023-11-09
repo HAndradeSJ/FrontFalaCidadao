@@ -20,6 +20,9 @@ export default function homeAgente() {
        <Link href='/agente-solicitacao'>
         <button id='bt1' className="btn" type="button" btn-lg>Solicitações</button>
         </Link>
+       <Link href='/agente-minhassolicitacao'>
+        <button id='bt1' className="btn" type="button" btn-lg>Minhas Solicitações</button>
+        </Link>
       </div>
     </>
   )

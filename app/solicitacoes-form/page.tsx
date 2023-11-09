@@ -54,7 +54,7 @@ export default function solicitacoesForm() {
             api.post("/solicitacao/upload/image",formData,{
                 headers: {
                     "Content-type": "application/form-data",
-                    "Authorization": `Bearer ${token}`,
+                    "Authorization":`Bearer ${token}`,
                 },
                 }).then(async(responses)=>{
                     
