@@ -352,7 +352,7 @@ export default function MinhasSolicitacaoAgente() {
                   <Image
                     className="Photo"
                     alt="logo"
-                    src={`http://192.168.0.105:3080/imagens/${image[0]?.imagemUrl}`}
+                    src={`http://10.10.0.217:3080/imagens/${image[0]?.imagemUrl}`}
                     width={600}
                     height={600}
                   />

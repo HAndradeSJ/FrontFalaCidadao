@@ -9,7 +9,7 @@
   margin-left: 5rem;
   font-size: large;
 }
-vbar:hover {
+#divbar:hover {
   cursor: pointer;
 } 
 

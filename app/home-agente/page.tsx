@@ -22,7 +22,7 @@ export default function homeAgente() {
 
       <div className="lista">
        <Link href='/agente-solicitacao'>
-        <button id='bt1' className="btn" type="button" btn-lg>Solicitações</button>
+        <button id='bt1' className="btn" type="button" btn-lg>Consulta</button>
         </Link>
        <Link href='/agente-minhassolicitacao'>
         <button id='bt1' className="btn" type="button" btn-lg>Minhas Solicitações</button>
