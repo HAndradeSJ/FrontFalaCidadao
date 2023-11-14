@@ -42,8 +42,8 @@ export const login = async (users : usuarios) => {
         email : email,
         senha : senha,        
     } 
-
     const res = await api.post(`/auth/login`,usuarios)
+    console.log(res)
     localStorage.setItem('token',res.data.response.token);
     return res
 }
