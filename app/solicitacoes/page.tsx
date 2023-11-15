@@ -12,6 +12,7 @@ import { Navbar2 } from "@/shared/componentes/navbar2";
 import Link from "next/link";
 import { getCategoria } from "../api/categoria";
 import { Categoria } from "@/shared/types/types";
+import { Navbar3 } from "@/shared/componentes/navbar3";
 
 export default function solicitacoes() {
   const [categoria, setCategoria] = useState<Categoria[]>([] as Categoria[]);
@@ -26,7 +27,7 @@ export default function solicitacoes() {
 
   return (
     <>
-      <Navbar2 />
+      <Navbar3 />
       <div className="mains">
         <div style={{ width: "100%" }}>
           <h1 className="title">Solicitação - Categorias</h1>

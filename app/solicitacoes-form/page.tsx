@@ -12,6 +12,7 @@ import { SolicitacaoDto } from '@/shared/types/types';
 import axios from 'axios';
 import { Router } from 'next/router';
 import api from '@/shared/componentes/utils/my-axios';
+import { Navbar3 } from '@/shared/componentes/navbar3';
 
 
 
@@ -91,7 +92,7 @@ export default function solicitacoesForm() {
 
     return (
         <>
-            <Navbar2 />
+            <Navbar3 />
             <h1>Formulário de solicitações</h1>
             <form>
                 <h4>Endereço</h4>

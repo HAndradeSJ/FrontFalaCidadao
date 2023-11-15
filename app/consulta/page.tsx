@@ -13,6 +13,7 @@ import { SolicitacaoDto } from "@/shared/types/types";
 import axios from "axios";
 import Image from "next/image";
 import api from "@/shared/componentes/utils/my-axios";
+import { Navbar3 } from "@/shared/componentes/navbar3";
 
 export default function consulta() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -188,7 +189,7 @@ export default function consulta() {
             </motion.div>
           </motion.div>
           <section>
-            <Navbar2 />
+            <Navbar3 />
           </section>
           <strong>
             {" "}

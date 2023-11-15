@@ -4,10 +4,11 @@ body {
 }
 
 #solicita {
-    margin-top: -7rem;
-    margin-left: 2rem;
-    width: 60rem;
+    margin-left:6%;
+    height:80%;
+    width:100%;
 }
+
 
 #h1 {
     color: #FFA53D;
@@ -16,25 +17,55 @@ body {
     margin-top: 2rem;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+.Buttones{
+    width:30%;
+    height:100%;
+    gap:9rem;
+    margin-right:8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mainss{
+    width:100%;
+    height:94vh;
+    margin-top:2%;
+    display: flex;
+    justify-content:space-between;
+    
+}
 #bt1 {
-    margin-top: -80rem;
-    width: 20rem;
-    margin-left: 30rem;
-    font-size: large;
-    color: #11226E;
+  
+    width:250px;
+    height:175%;
+    font-size:1.2rem;
+    border: none;
+    color:white;
     font-weight: bold;
     background-color: #FFA53D;
+    transition: ease-out 0.5s;
+    box-shadow: inset 0 0 0 0 #FFA53D;
+}
+#bt1:hover{
+    box-shadow: inset 0 -100px 0 0 #162E98;
 }
 
-#bt2 {
-    margin-top: -70rem;
-    width: 20rem;
-    margin-left: 30rem;
-    font-size: large;
-    color: #11226E;
+
+#bt3 {
+    width:250px;
+    height:175%;
+    font-size:1.2rem;
+    border: none;
+    color:white;
     font-weight: bold;
     background-color: #FFA53D;
+    transition: ease-out 0.5s;
+    box-shadow: inset 0 0 0 0 #FFA53D;
+}
+
+#bt3:hover{
+    box-shadow: inset 0 -100px 0 0 #162E98;
 }
 
 /* Media query para telas menores */

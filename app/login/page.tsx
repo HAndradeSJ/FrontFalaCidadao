@@ -67,10 +67,10 @@ export default function Login() {
           console.log(response.data.response.funcao)
           if (response.data.response.funcao === 'cidadao') {
             Router.push("/home-usuario");
-            window.location.reload();
+            // window.location.reload();
           } else {
             Router.push("/home-agente");
-            window.location.reload();
+            // window.location.reload();
           }
         } else {
           Swal.fire({
