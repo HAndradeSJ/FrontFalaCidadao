@@ -14,6 +14,7 @@ import axios from "axios";
 import Image from "next/image";
 import api from "@/shared/componentes/utils/my-axios";
 import { Navbar3 } from "@/shared/componentes/navbar3";
+import { Navbar } from "@/shared/componentes/navbar";
 
 export default function consulta() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -293,7 +294,7 @@ export default function consulta() {
           </motion.div>
           <main>
             <section>
-              <Navbar2 />
+              <Navbar3 />
             </section>
             <strong>
               {" "}
@@ -375,11 +376,11 @@ export default function consulta() {
       ) : (
         <main>
           <section>
-            <Navbar2 />
+            <Navbar3 />
           </section>
           <strong>
             {" "}
-            <h2>Consultas</h2>
+            <h2 style={{color:'#FFA53D', marginTop:'2%'}}>Consultas</h2>
           </strong>
 
           <form action="">
