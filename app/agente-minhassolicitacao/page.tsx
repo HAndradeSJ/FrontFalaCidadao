@@ -38,7 +38,7 @@ export default function MinhasSolicitacaoAgente() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     api
-      .get(`/solicitacao/getall/agente`, {
+      .get(`/solicitacao/my/solicitacao`, {
         headers: {
           "Content-type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -82,6 +82,7 @@ export default function MinhasSolicitacaoAgente() {
     try{
      
       const status = localStorage.getItem('status');
+      console.log(status);
       const alterar = {
           chamado:chamado,
           justificativa:justificativa
@@ -116,7 +117,7 @@ export default function MinhasSolicitacaoAgente() {
               title: `Ocorreu um erro ao alterar o status`,
             });
           }
-        }else if(status === 'Recusado'){
+        }else {
           try{
             const token2 = localStorage.getItem('token');
             const res = await api.put(`/solicitacao/recusar/solicitacao`,alterar,{
@@ -145,11 +146,6 @@ export default function MinhasSolicitacaoAgente() {
               title: `Ocorreu um erro ao alterar o status`,
             });
           }
-        }else{
-          Swal.fire({
-            icon: "error",
-            title: `Ocorreu um erro ao alterar o status`,
-          });
         }
     }catch(err){
       console.log(err)
@@ -230,7 +226,18 @@ export default function MinhasSolicitacaoAgente() {
                   </div>
                 </div>
                 <div className="column1">
-                    <Radio actived1={actived1} setActived1={setActived1}  setActived2={setActived2}actived2={actived2}/>
+                  <div style={{display:'flex',flexDirection:'column',justifyContent:'left',alignItems:'center', marginRight:'52%'}}>
+                  <p
+                      style={{
+                        fontWeight: "bold",
+                        marginLeft: "2%",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Mudar Status
+                    </p>
+                  <Radio actived1={actived1} setActived1={setActived1}  setActived2={setActived2}actived2={actived2}/>
+                  </div>
                     <div className="inputs">
                     <p
                       style={{
@@ -498,7 +505,7 @@ export default function MinhasSolicitacaoAgente() {
                       </table>
                     </div>
                     <div id="column2">
-                      {item?.fk_idagente == "" ? (
+                      {item?.status == 'Em Aberto' ? (
                         <>
                           {" "}
                           <button

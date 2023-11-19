@@ -456,7 +456,7 @@ export default function SolicitacaoAgente() {
                       </table>
                     </div>
                     <div id="column2">
-                      {item?.fk_idagente == "" ? (
+                      {item?.status == "Em Aberto" ? (
                         <>
                           {" "}
                           <button
