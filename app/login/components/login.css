@@ -1,7 +1,5 @@
 body {
-    background-image: url("../img/Wallpaperfalacidadao.webp");
-    background-repeat:no-repeat;
-    background-size: cover;
+  
 }
 
 #texte {
@@ -99,6 +97,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../img/Wallpaperfalacidadao.webp");
+    background-repeat:no-repeat;
+    background-size: cover;
 
   }
   .input-group label {

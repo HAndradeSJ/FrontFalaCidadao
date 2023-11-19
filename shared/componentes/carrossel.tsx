@@ -23,19 +23,19 @@ export default function CarouselComponent() {
       </div>
 
       <div className="carousel-inner">
+        <div className="carousel-item c-item">
+          <Image src={Indaia1} className="d-block w-100 c-img" alt="Slide 2" style={{width: '100%', height:'40rem'}}/>
+          <div className="carousel-caption top-0 mt-4">
+          </div>
+        </div>
         <div className="carousel-item active c-item">
-          <Image src={Indaia1} className="d-block w-100 c-img" alt="Slide 1" style={{width: '100%', height:'40rem'}}/>
+          <Image src={Indaiatuba} className="d-block w-100 c-img" alt="Slide 1" style={{width: '100%', height:'40rem'}}/>
           <div className="carousel-caption top-0 mt-4">
           </div>
         </div>
 
         <div className="carousel-item c-item">
-          <Image src={Indaia2} className="d-block w-100 c-img" alt="Slide 2" style={{width: '100%', height:'40rem'}}/>
-          <div className="carousel-caption top-0 mt-4">
-          </div>
-        </div>
-        <div className="carousel-item c-item">
-          <Image src={Indaiatuba} className="d-block w-100 c-img" alt="Slide 3" style={{width: '100%', height:'40rem'}}/>
+          <Image src={Indaia2} className="d-block w-100 c-img" alt="Slide 3" style={{width: '100%', height:'40rem'}}/>
           <div className="carousel-caption top-0 mt-4">
           </div>
         </div>

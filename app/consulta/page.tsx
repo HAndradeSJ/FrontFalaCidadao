@@ -15,6 +15,7 @@ import Image from "next/image";
 import api from "@/shared/componentes/utils/my-axios";
 import { Navbar3 } from "@/shared/componentes/navbar3";
 import { Navbar } from "@/shared/componentes/navbar";
+import image from "next/image";
 
 export default function consulta() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -70,10 +71,23 @@ export default function consulta() {
     let data = consulta.filter((item) => item.idsolicitacao === id);
     setVermais(data);
   }
-  function showImages(id:string){
+   async function showImages(id:string){
     setShowImage(true);
     let data = consulta.filter((item) => item.idsolicitacao === id);
-    setImage(data);
+    setImage(data)
+    // console.log(data);
+    // try {
+    //   const response = await fetch(`http://localhost:3080/imagens/${data[0]?.imagemUrl}`)
+    //   if (!response.ok) {
+    //     setImage("undefined")
+    //   }
+    //   const blob = await response.blob()
+    //   const url = await URL.createObjectURL(blob)
+    //   setImage(url)
+    // } catch (error) {
+    //   setImage("undefined")
+    //   console.error(error)
+    // }
   }
 
   return (
@@ -286,8 +300,7 @@ export default function consulta() {
               </div>
               <div className="divImages">
                 <div className="editdiv">
-
-                <Image className="Photo"  alt="logo" src={`http://10.10.0.217:3080/imagens/${image[0]?.imagemUrl}`} width={600}  height={600}/>
+                <Image className="Photo"  alt="logo" src={`http://localhost:3080/imagens/${image[0]?.imagemUrl}`} width={600}  height={600}/>
                 </div>
               </div>
             </motion.div>
