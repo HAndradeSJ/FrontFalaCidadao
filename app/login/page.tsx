@@ -59,26 +59,29 @@ export default function Login() {
           });
         }
       } else {
-        const response = await login(Usuarios);
-
-        if (response.status === 200) {
-          Swal.fire({
-            icon: "success",
-            title: "Login feito com sucesso !",
-          });
-          console.log(response.data.response.funcao);
-          if (response.data.response.funcao === "cidadao") {
-            Router.push("/home-usuario");
-            // window.location.reload();
-          } else {
-            Router.push("/home-agente");
-            // window.location.reload();
-          }
+        if (activedGoogle == true) {
         } else {
-          Swal.fire({
-            icon: "error",
-            title: "Cadastro feito com sucesso!",
-          });
+          const response = await login(Usuarios);
+
+          if (response.status === 200) {
+            Swal.fire({
+              icon: "success",
+              title: "Login feito com sucesso !",
+            });
+            console.log(response.data.response.funcao);
+            if (response.data.response.funcao === "cidadao") {
+              Router.push("/home-usuario");
+              // window.location.reload();
+            } else {
+              Router.push("/home-agente");
+              // window.location.reload();
+            }
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Cadastro feito com sucesso!",
+            });
+          }
         }
       }
     } catch (error) {
@@ -93,9 +96,7 @@ export default function Login() {
 
   return (
     <>
-      <GoogleOAuthProvider
-        clientId="762841598252-ikaaghj5fee7mrsdvu08l19ti7lb0sb3.apps.googleusercontent.com"
-      >
+      <GoogleOAuthProvider clientId="762841598252-ikaaghj5fee7mrsdvu08l19ti7lb0sb3.apps.googleusercontent.com">
         <Navbar />
         <div className="mains">
           {Cadastro === true ? (

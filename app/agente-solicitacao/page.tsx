@@ -89,7 +89,7 @@ export default function SolicitacaoAgente() {
         console.log("OI");
         Swal.fire({
           icon: "success",
-          title: `${response.data.response}`,
+          title: `Solicitação atualizada com sucesso !`,
         });
       })
       .catch((error) => {

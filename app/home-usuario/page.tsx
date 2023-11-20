@@ -14,7 +14,7 @@ export default function homeUsuario() {
   return (
     <>
       <Navbar3 />
-      <div className="mainss">
+      <div className="mainssx">
         <div>
           <h1 id="h1">Como podemos ajudar?</h1>
           <Image src={Usuario} alt="usuario" id="solicita" />

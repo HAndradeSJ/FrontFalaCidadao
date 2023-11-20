@@ -65,14 +65,14 @@ export default function solicitacoesForm() {
                     if(response.status == 200){
                         Swal.fire({
                             icon: 'success',
-                            title: `${response.data.response}`,
+                            title: `Solicitação cadastrada com sucesso !`,
                           });
                           router.push('/consulta')
         
                     }else{
                         Swal.fire({
                             icon: 'error',
-                            title:`${response.data.response}`,	
+                            title:`erro ao cadastrar solicitação`,	
                           });
                         
                     }
