@@ -49,7 +49,7 @@ export default function solicitacoes() {
                   onClick={() => {
                     localStorage.setItem(
                       "idcategoria",
-                      categoria[2]?.idcategoria
+                      categoria[0]?.idcategoria
                     );
                   }}
                 >
@@ -73,7 +73,7 @@ export default function solicitacoes() {
                   onClick={() => {
                     localStorage.setItem(
                       "idcategoria",
-                      categoria[1]?.idcategoria
+                      categoria[2]?.idcategoria
                     );
                   }}
                 >
@@ -97,7 +97,7 @@ export default function solicitacoes() {
                   onClick={() => {
                     localStorage.setItem(
                       "idcategoria",
-                      categoria[0]?.idcategoria
+                      categoria[1]?.idcategoria
                     );
                   }}
                 >

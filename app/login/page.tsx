@@ -96,7 +96,7 @@ export default function Login() {
 
   return (
     <>
-      <GoogleOAuthProvider clientId="762841598252-ikaaghj5fee7mrsdvu08l19ti7lb0sb3.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="722638458269-gud0ofrqme6fgpg7f6iv3u70hrsirjgo.apps.googleusercontent.com">
         <Navbar />
         <div className="mains">
           {Cadastro === true ? (
