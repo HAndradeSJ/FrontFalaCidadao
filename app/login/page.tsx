@@ -9,6 +9,7 @@ import { criarUsers, login } from "../api/loginApi";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import regexs from "@/shared/componentes/regexs";
 
 export default function Login() {
   const objectUSuario = {
@@ -27,6 +28,11 @@ export default function Login() {
     const { name, value } = e.target;
     setUSuario({ ...Usuarios, [name]: value });
   }
+  function onFocus(e: React.FocusEvent  <HTMLInputElement>) {
+    const { name, value } = e.target;
+    regexs(name, value)
+    setUSuario({ ...Usuarios, [name]: value });
+  }
 
   const enviar = async () => {
     try {
@@ -41,7 +47,7 @@ export default function Login() {
           });
           const res = await login(Usuarios);
           if (res.status === 200) {
-            if (res.data.response.funcao === "cidadao") {
+            if (res.data.response.funcao === "cidadao") { 
               Router.push("/home-usuario");
             } else {
               Router.push("/home-agente");
@@ -98,7 +104,7 @@ export default function Login() {
     <>
       <GoogleOAuthProvider clientId="722638458269-gud0ofrqme6fgpg7f6iv3u70hrsirjgo.apps.googleusercontent.com">
         <Navbar />
-        <div className="mains">
+        <div className="mainsxxx">
           {Cadastro === true ? (
             <div className="form-container1">
               <p className="title">Cadastro</p>
@@ -109,6 +115,7 @@ export default function Login() {
                       <label htmlFor="username">CPF</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
                         name="cpf"
                         type="number"
                         placeholder=""
@@ -118,6 +125,8 @@ export default function Login() {
                       <label htmlFor="username">Nome</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
+
                         name="nome"
                         type="text"
                         placeholder=""
@@ -127,6 +136,8 @@ export default function Login() {
                       <label htmlFor="username">Telefone</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
+
                         name="telefone"
                         type="number"
                         placeholder=""
@@ -138,6 +149,8 @@ export default function Login() {
                       <label htmlFor="username">Idade</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
+
                         name="idade"
                         type="number"
                         placeholder=""
@@ -147,6 +160,8 @@ export default function Login() {
                       <label htmlFor="username">Email</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
+
                         name="email"
                         type="email"
                         id="username"
@@ -157,6 +172,8 @@ export default function Login() {
                       <label htmlFor="password">Senha</label>
                       <input
                         onChange={(e) => onchange(e)}
+                        onBlur={(e) => onFocus(e)}
+
                         name="senha"
                         type="password"
                         id="password"
@@ -241,6 +258,8 @@ export default function Login() {
                       onChange={(e) => onchange(e)}
                       name="email"
                       type="email"
+                      onBlur={(e) => onFocus(e)}
+
                       id="username"
                       placeholder=""
                     />
@@ -249,6 +268,7 @@ export default function Login() {
                     <label htmlFor="password">Senha</label>
                     <input
                       onChange={(e) => onchange(e)}
+                      onBlur={(e) => onFocus(e)}
                       name="senha"
                       type="password"
                       id="password"
