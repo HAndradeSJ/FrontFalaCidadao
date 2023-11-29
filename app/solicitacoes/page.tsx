@@ -64,7 +64,7 @@ export default function solicitacoes() {
             </div>
             <div className="quads">
               <div className="boxss">
-                <p className="texts">Placas de Trânsitos</p>
+                <p className="texts">Placas de Trânsito</p>
                 <p style={{ fontWeight: "300" }}>Secretária de Obras e Vias</p>
               </div>
               <Link href={"/solicitacoes-form/"}>
@@ -88,7 +88,7 @@ export default function solicitacoes() {
             </div>
             <div className="quads">
               <div className="boxss">
-                <p className="texts">Retirada de Árovores</p>
+                <p className="texts">Retirada de Árvores</p>
                 <p style={{ fontWeight: "300" }}>Secretária do Meio Ambiente</p>
               </div>
               <Link href={"/solicitacoes-form/"}>

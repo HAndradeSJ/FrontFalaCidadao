@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import regexs from "@/shared/componentes/regexs";
+import api from "@/shared/componentes/utils/my-axios";
 
 export default function Login() {
   const objectUSuario = {
@@ -33,7 +34,25 @@ export default function Login() {
     regexs(name, value)
     setUSuario({ ...Usuarios, [name]: value });
   }
+  async function SendGoogle(cres:any){
 
+    const token =  {
+      token:cres.credential
+    }
+    
+   
+    try{
+      const response = await api.post('auth//login/google',token)
+      if(response.status == 200){
+        console.log('oi')
+      }
+      else{
+
+      }
+    }catch(err){
+      console.log(err);
+    }
+  }
   const enviar = async () => {
     try {
       if (Cadastro == true) {
@@ -102,7 +121,7 @@ export default function Login() {
 
   return (
     <>
-      <GoogleOAuthProvider clientId="722638458269-gud0ofrqme6fgpg7f6iv3u70hrsirjgo.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="792842872794-9j1lbeb0na81q1i974p1kec8eemrt12h.apps.googleusercontent.com">
         <Navbar />
         <div className="mainsxxx">
           {Cadastro === true ? (
@@ -209,7 +228,7 @@ export default function Login() {
                 {activedGoogle == true ? (
                   <GoogleLogin
                     onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse);
+                      SendGoogle(credentialResponse)
                     }}
                     onError={() => {
                       console.log("Login Failed");
@@ -302,7 +321,7 @@ export default function Login() {
                   {activedGoogle == true ? (
                     <GoogleLogin
                       onSuccess={(credentialResponse) => {
-                        console.log(credentialResponse);
+                        SendGoogle(credentialResponse)
                       }}
                       onError={() => {
                         console.log("Login Failed");
